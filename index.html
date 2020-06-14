@@ -10,76 +10,51 @@
 
       <script>
 
-            function labsEnable() {
-              return document.getElementById("showLabs").disabled = false;
-            }
-            function labsDisabled() {
-              return document.getElementById("showLabs").disabled = true;
-            }
+            function defaultLabsStatus(){
+               document.getElementById("AP").style.display = "none";
+               document.getElementById("Andaman").style.display = "none";
+               document.getElementById("Arunachal").style.display = "none";
+               document.getElementById("Assam").style.display = "none";
+            //    document.getElementById("Bihar").style.display = "none";
+                 $('#Bihar').css('display', 'none');
+               document.getElementById("Chandigarh").style.display = "none";
+            //    document.getElementById("Chhattisgarh").style.display = "none";
+            //    document.getElementById("Dader").style.display = "none";
+               $('#Dader').css('display', 'none');
+               $('#Daman').css('display', 'none');
+               $('#Delhi').css('display', 'none');
+               
+            //    document.getElementById("Daman").style.display = "none";
+            //    document.getElementById("Delhi").style.display = "none";
 
-            function hideASM(){
-                  document.getElementById("asm").style.display = "none"
-            }
-            function hideAndhraP(){
-               document.getElementById("ap").style.display = "none"
+               
+               
+
+               
 
             }
             
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             $(function () {
                     $("#states").change(function () {
                         let selectedState = $(this).find("option:selected").text();
                         if(selectedState){
-                          labsEnable();
                         showStateLabs(selectedState);
                         }
                         else{
-                        labsDisabled();
+                             alert('Please Select State');
                           }
                     });
                 });
             function showStateLabs(selectedState) {
                         if(selectedState == 'Andhra Pradesh'){
-                              document.getElementById("ap").style.display = "block";
-
-                              hideASM();
+                              defaultLabsStatus();
+                              document.getElementById("AP").style.display = "block";
+                            
                         }
-                        if(selectedState == 'Assam'){                             
-                              document.getElementById("asm").style.display = "block";
-                              hideAndhraP();
+                        if(selectedState == 'Assam'){        
+                              defaultLabsStatus();                     
+                              document.getElementById("Andaman").style.display = "block";
+                            ;
                         }
                   
                   }
@@ -150,25 +125,9 @@
       </select>
     </div>
 </center>   
-    <center>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong" id="showLabs" style="margin-left:auto;margin-right:auto;background-color: dodgerblue;margin-top:50px;"
-    title="Please Select State to Enable this Button" disabled>
-      Show Labs
-   </button>
-</center>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">List of Labs in Your State</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
+
  <!-- Andhra Table 1               -->
-            <table class="table" id="ap" style="display:none;">
+            <table class="table" id="AP" style="display:none;">
                   <thead>
                     <tr>
                       <th scope="col">S. No.(AP)</th>
@@ -215,13 +174,109 @@
                           5- Maharaja Institute of Medical Sciences,Vizianagaram
                       </td>
                     </tr>
-                    <!-- <tr>
-                      <th scope="row">2</th>
-                      <td>RT-PCR</td>
-                      <td>Sri Venkateswara Medical College, Tirupati</td>
-                      <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-                    </tr>
                     <tr>
+                      <th scope="row">2</th>
+                      <td>TrueNat</td>
+                      <td>12-Damien TB Research Centre, Nellore
+                          13- SVRR Govt. General Hospital, Tirupati<br>
+                          14- Community Health Centre, Gadi Veedhi
+                          Saluru, Vizianagaram
+                          <br>
+                          15-Community Health Centre, Bhimavaram,
+                          West Godavari District
+                          <br>
+                          16-Community Health Centre, Patapatnam
+                          <br>
+                          17-Community Health Center, Nandyal,
+                          Banaganapalli, Kurnool
+                          <br>
+                          18- GSL Medical College & General Hospital,
+                          Rajahnagram, East Godavari District
+                          <br>
+                          19- District Hospital, Madnapalle, Chittoor
+                          District
+                          <br>
+                          20- District Hospital, APVVP, Pulivendula,
+                          Kadapa District
+                          <br>
+                          21- District Hospital, Rajahmundry, East
+                          Godavari District
+                          <br>
+                          22- District Hospital, Noonepalli, Nandyal,
+                          Kurnool
+                          <br>
+                          23- DistrictHospital, Anakapalli, Vishakhapatnam
+                          <br>
+                          24- District Hospital, Hindupur, Anantpur
+                          <br>
+                          25- District Hospital, Proddatur
+                          <br>
+                          26- District Hospital, Machlipatnam
+                          <br>
+                          27- District Hospital, Atmakur
+                          <br>
+                          28- District Hospital, Markapur
+                          <br>
+                          District Hospital, Tekkali
+                          <br>
+                          29- Area Hospital, Rampachodavaram, East
+                          Godavari District
+                          <br>
+                          30- Area Hospital, Palamaner, Chittoor
+                          <br>
+                          31- Area Hospital, Amalapuram, East
+                          Godavari District
+                          <br>
+                          32- Area Hospital, Adoni, Kurnool
+                          <br>
+                          33- Area Hospital, Chirala
+                          <br>
+                          34- Area Hospital, Kandukuru
+                          <br>
+                          35- Area Hospital, Narsipatnam
+                          <br>
+                          36- Area Hospital, Parvathipuram
+                          <br>
+                          37- Area Hospital, Parvathipuram
+                          <br>
+                          38- Area Hospital, Tadepalligudem
+                          <br>
+                          39- Area Hospital, Kavali
+                          <br>
+                          40- Area Hospital, Tenali
+                          <br>
+                          41- Area Hospital, Narasaraopet, Guntur
+                          <br>
+                          42- Area Hospital, Macheria, Guntur
+                          <br>
+                          43- Area Hospital, Kadiri
+                          <br>
+                          44- Area Hospital, Gandhinagar, Nuzividu
+                          <br>
+                          45- ACSR Govt. Medical College, Nellore
+                          <br>
+                          46- Rural Development Trust, Bathalpalli
+                          <br>
+                          47- Govt. General Hospital, Guntur
+                          <br>
+                          48- Govt. General Hospital/ RIMS, Ongole
+                          <br>
+                          49- DST Lab Govt. Chest Hospital,
+                          Vishakhapatnam
+                          <br>
+                          50- District Hospital, Vizianagram
+                          <br>
+                          51- District Hospital, Chittoor
+                          <br>
+                          52- District Hospital, Eluru
+                          <br>
+                          53- SHAR Hospital, Sriharikota, Nellore
+                          <br>
+                      </td>
+
+                      <td></td>
+                    </tr>
+                    <!-- <tr>
                       <th scope="row">3</th>
                       <td>Larry</td>
                       <td>the Bird</td>
@@ -262,7 +317,7 @@
                 </table>      
                 
  <!-- Arunchal Table 3               -->                
-                <table class="table" id="bihar" style="display:none;">
+                <table class="table" id="Arunachal" style="display:none;">
                   <thead>
                     <tr>
                       <th scope="col">S. No.</th>
@@ -293,7 +348,7 @@
                   </tbody>
                 </table>   
  <!-- Assam Table 4               -->                
- <table class="table" id="bihar" style="display:none;">
+ <table class="table" id="Assam" style="display:none;">
       <thead>
         <tr>
           <th scope="col">S. No.</th>
@@ -355,7 +410,7 @@
       </tbody>
     </table>                   
   <!-- Chandigarh Table 6               -->                
-  <table class="table" id="bihar" style="display:none;">
+  <table class="table" id="Chandigarh" style="display:none;">
       <thead>
         <tr>
           <th scope="col">S. No.</th>
@@ -386,7 +441,7 @@
       </tbody>
     </table> 
   <!-- Chattisgarh Table 7               -->                
-  <table class="table" id="bihar" style="display:none;">
+  <table class="table" id="Chattisgarh" style="display:none;">
       <thead>
         <tr>
           <th scope="col">S. No.</th>
@@ -417,7 +472,7 @@
       </tbody>
     </table>    
   <!-- Dadar Table 8               -->                
-  <table class="table" id="bihar" style="display:none;">
+  <table class="table" id="Dadar" style="display:none;">
       <thead>
         <tr>
           <th scope="col">S. No.</th>
@@ -448,7 +503,7 @@
       </tbody>
     </table>    
   <!-- Daman Table 9               -->                
-  <table class="table" id="bihar" style="display:none;">
+  <table class="table" id="Daman" style="display:none;">
       <thead>
         <tr>
           <th scope="col">S. No.</th>
@@ -479,7 +534,7 @@
       </tbody>
     </table>    
    <!-- Delhi Table 10               -->                
-   <table class="table" id="bihar" style="display:none;">
+   <table class="table" id="Delhi" style="display:none;">
       <thead>
         <tr>
           <th scope="col">S. No.</th>
@@ -510,7 +565,7 @@
       </tbody>
     </table>    
    <!-- Lakshadweep Table 11               -->                
-   <table class="table" id="bihar" style="display:none;">
+   <table class="table" id="Lakshadweep" style="display:none;">
       <thead>
         <tr>
           <th scope="col">S. No.</th>
@@ -541,7 +596,7 @@
       </tbody>
     </table>  
    <!-- Panducherry Table 12               -->                
-   <table class="table" id="bihar" style="display:none;">
+   <table class="table" id="Panducherry" style="display:none;">
       <thead>
         <tr>
           <th scope="col">S. No.</th>
@@ -573,7 +628,7 @@
     </table>  
             
    <!-- Goa Table 13               -->                
-   <table class="table" id="bihar" style="display:none;">
+   <table class="table" id="Goa" style="display:none;">
       <thead>
         <tr>
           <th scope="col">S. No.</th>
@@ -605,7 +660,7 @@
     </table>
    
    <!-- Gujrat Table 14               -->                
-   <table class="table" id="bihar" style="display:none;">
+   <table class="table" id="Gujrat" style="display:none;">
       <thead>
         <tr>
           <th scope="col">S. No.</th>
@@ -637,7 +692,7 @@
     </table>
 
    <!-- Haryana Table 15               -->                
-   <table class="table" id="bihar" style="display:none;">
+   <table class="table" id="Haryana" style="display:none;">
       <thead>
         <tr>
           <th scope="col">S. No.</th>
@@ -669,7 +724,7 @@
     </table>
 
       <!-- Himachal Table 16               -->                
-   <table class="table" id="bihar" style="display:none;">
+   <table class="table" id="Himachal" style="display:none;">
       <thead>
         <tr>
           <th scope="col">S. No.</th>
@@ -700,7 +755,7 @@
       </tbody>
     </table>
    <!-- J&K Table 17               -->                
-   <table class="table" id="bihar" style="display:none;">
+   <table class="table" id="JK" style="display:none;">
       <thead>
         <tr>
           <th scope="col">S. No.</th>
@@ -731,7 +786,7 @@
       </tbody>
     </table>
    <!-- jharkhand Table 18               -->                
-   <table class="table" id="bihar" style="display:none;">
+   <table class="table" id="Jharkhand" style="display:none;">
       <thead>
         <tr>
           <th scope="col">S. No.</th>
@@ -763,7 +818,7 @@
     </table>
 
      <!-- Karnataka Table 19               -->                
-     <table class="table" id="bihar" style="display:none;">
+     <table class="table" id="Karnataka" style="display:none;">
       <thead>
         <tr>
           <th scope="col">S. No.</th>
@@ -795,7 +850,7 @@
     </table>  
 
        <!-- Kerla Table 20               -->                
-   <table class="table" id="bihar" style="display:none;">
+   <table class="table" id="Kerla" style="display:none;">
       <thead>
         <tr>
           <th scope="col">S. No.</th>
@@ -827,7 +882,7 @@
     </table>
 
         <!-- MP Table 21               -->                
-        <table class="table" id="bihar" style="display:none;">
+        <table class="table" id="MP" style="display:none;">
             <thead>
               <tr>
                 <th scope="col">S. No.</th>
@@ -858,7 +913,7 @@
             </tbody>
           </table>   
         <!-- Maharastra Table 22               -->                
-        <table class="table" id="bihar" style="display:none;">
+        <table class="table" id="Maharastra" style="display:none;">
             <thead>
               <tr>
                 <th scope="col">S. No.</th>
@@ -890,7 +945,7 @@
           </table>   
 
 <!-- Manipur Table 23               -->                
-        <table class="table" id="bihar" style="display:none;">
+        <table class="table" id="Manipur" style="display:none;">
             <thead>
               <tr>
                 <th scope="col">S. No.</th>
@@ -922,7 +977,7 @@
           </table>   
 
         <!-- Meghalaya Table 24               -->                
-        <table class="table" id="bihar" style="display:none;">
+        <table class="table" id="Meghalaya" style="display:none;">
             <thead>
               <tr>
                 <th scope="col">S. No.</th>
@@ -952,8 +1007,8 @@
               </tr>
             </tbody>
           </table>   
-        <!-- Mihoram Table 25               -->                
-        <table class="table" id="bihar" style="display:none;">
+        <!-- Mijoram Table 25               -->                
+        <table class="table" id="Mijoram" style="display:none;">
             <thead>
               <tr>
                 <th scope="col">S. No.</th>
@@ -984,7 +1039,7 @@
             </tbody>
           </table>   
         <!-- Nagaland Table 26               -->                
-        <table class="table" id="bihar" style="display:none;">
+        <table class="table" id="Nagaland" style="display:none;">
             <thead>
               <tr>
                 <th scope="col">S. No.</th>
@@ -1015,7 +1070,7 @@
             </tbody>
           </table>    
         <!-- Odisha Table 27               -->                
-        <table class="table" id="bihar" style="display:none;">
+        <table class="table" id="Odisha" style="display:none;">
             <thead>
               <tr>
                 <th scope="col">S. No.</th>
@@ -1046,7 +1101,7 @@
             </tbody>
           </table>                      
         <!-- Punjab Table 28               -->                
-        <table class="table" id="bihar" style="display:none;">
+        <table class="table" id="Punjab" style="display:none;">
             <thead>
               <tr>
                 <th scope="col">S. No.</th>
@@ -1077,7 +1132,7 @@
             </tbody>
           </table>  
          <!-- Rajsthan Table 29               -->                
-         <table class="table" id="bihar" style="display:none;">
+         <table class="table" id="Rajsthan" style="display:none;">
             <thead>
               <tr>
                 <th scope="col">S. No.</th>
@@ -1108,7 +1163,7 @@
             </tbody>
           </table>            
          <!-- Sikkim Table 30               -->                
-         <table class="table" id="bihar" style="display:none;">
+         <table class="table" id="Sikkim" style="display:none;">
             <thead>
               <tr>
                 <th scope="col">S. No.</th>
@@ -1139,7 +1194,7 @@
             </tbody>
           </table> 
          <!-- Tamilnadu Table 31               -->                
-         <table class="table" id="bihar" style="display:none;">
+         <table class="table" id="Tamilnadu" style="display:none;">
             <thead>
               <tr>
                 <th scope="col">S. No.</th>
@@ -1170,7 +1225,7 @@
             </tbody>
           </table>  
          <!-- Telangana Table 32               -->                
-         <table class="table" id="bihar" style="display:none;">
+         <table class="table" id="Telangana" style="display:none;">
             <thead>
               <tr>
                 <th scope="col">S. No.</th>
@@ -1201,7 +1256,7 @@
             </tbody>
           </table>               
 <!-- Tripura Table 33               -->                
-         <table class="table" id="bihar" style="display:none;">
+         <table class="table" id="Tripura" style="display:none;">
             <thead>
               <tr>
                 <th scope="col">S. No.</th>
@@ -1232,7 +1287,7 @@
             </tbody>
           </table>                              
 <!-- UP Table 34               -->                
-<table class="table" id="bihar" style="display:none;">
+<table class="table" id="UP" style="display:none;">
       <thead>
         <tr>
           <th scope="col">S. No.</th>
@@ -1263,7 +1318,7 @@
       </tbody>
     </table>      
 <!-- Uttrkhand Table 35               -->                
-<table class="table" id="bihar" style="display:none;">
+<table class="table" id="Uttrkhand" style="display:none;">
       <thead>
         <tr>
           <th scope="col">S. No.</th>
@@ -1294,7 +1349,7 @@
       </tbody>
     </table>    
 <!-- WB Table 36               -->                
-<table class="table" id="bihar" style="display:none;">
+<table class="table" id="WB" style="display:none;">
       <thead>
         <tr>
           <th scope="col">S. No.</th>
@@ -1325,29 +1380,6 @@
       </tbody>
     </table>                                                                                    
                              
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
 
 </body>
