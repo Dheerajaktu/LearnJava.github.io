@@ -8,24 +8,24 @@
      <script src="./bootstrap.min.js" type="text/javascript"></script>
       <title>COVID-19 Test Labs</title>
 
-    <script>
+      <script>
 
             function defaultLabsStatus(){
                document.getElementById("AP").style.display = "none";
                document.getElementById("Andaman").style.display = "none";
                document.getElementById("Arunachal").style.display = "none";
                document.getElementById("Assam").style.display = "none";
-            //    document.getElementById("Bihar").style.display = "none";
-                 $('#Bihar').css('display', 'none');
+               $('#Bihar').css('display', 'none');
                document.getElementById("Chandigarh").style.display = "none";
                document.getElementById("Chhattisgarh").style.display = "none";
-            //    document.getElementById("Dader").style.display = "none";
                $('#Dader').css('display', 'none');
                $('#Daman').css('display', 'none');
                $('#Delhi').css('display', 'none');
+
+               $('#Lakshadweep').css('display', 'none');
+               $('#Puducherry').css('display', 'none');
+               $('#Goa').css('display', 'none');
                
-            //    document.getElementById("Daman").style.display = "none";
-            //    document.getElementById("Delhi").style.display = "none";
 
                
                
@@ -73,6 +73,31 @@
                               defaultLabsStatus();
                               document.getElementById("Chhattisgarh").style.display = "block"; 
                         }
+                        if(selectedState == 'Dadar and Nagar Haveli'){    
+                              defaultLabsStatus();    
+                            alert('No Records Exist');
+                            
+                        }
+                        if(selectedState == 'Daman and Diu'){   
+                              defaultLabsStatus()     
+                            alert('No Records Exist');
+                        }
+                        if(selectedState == 'Delhi'){
+                              defaultLabsStatus();
+                              document.getElementById("Delhi").style.display = "block"; 
+                        }
+                        if(selectedState == 'Lakshadweep'){  
+                              defaultLabsStatus();      
+                            alert('No Records Exist');
+                        }
+                        if(selectedState == 'Puducherry'){  
+                              defaultLabsStatus();      
+                            alert('No Records Exist');
+                        }
+                        if(selectedState == 'Goa'){      
+                              defaultLabsStatus();  
+                            alert('No Records Exist');
+                        }
                   
                   }
                   
@@ -96,6 +121,7 @@
 </div>
 </div>
 <center>
+      
 <div class="form-group" style="margin-left:10%;margin-right:10%;">
       <label for="state" style="font-size: 20px;color:dodgerblue">Select Your State</label>
       <select class="form-control" id="states">
@@ -142,9 +168,10 @@
       </select>
     </div>
 </center>   
-
+<div class="container">
+ <div class="row">     
  <!-- Andhra Table 1               -->
-            <table class="table" id="AP" style="display:none;">
+            <table class="table table-bordered" id="AP" style="display:none;">
                   <thead>
                     <tr>
                       <th scope="col">Andhra Pradesh</th>
@@ -302,7 +329,7 @@
                   </tbody>
                 </table>
  <!-- Andman Table 2               -->
-                <table class="table" id="Andaman" style="display:none;">
+                <table class="table table-bordered" id="Andaman" style="display:none;">
                 </table>      
                 
  <!-- Arunchal Table 3               -->                
@@ -331,7 +358,7 @@
                   </tbody>
                 </table>   
  <!-- Assam Table 4               -->                
- <table class="table" id="Assam" style="display:none;">
+ <table class="table table-bordered" id="Assam" style="display:none;">
       <thead>
         <tr>
           <th scope="col">Assam(13)</th>
@@ -377,7 +404,7 @@
       </tbody>
     </table>       
  <!-- Bhiar Table 5               -->                
- <table class="table" id="Bihar" style="display:none;">
+ <table class="table table-bordered" id="Bihar" style="display:none;">
       <thead>
         <tr>
           <th scope="col">Bihar(42)-Govt: 39 and Private: 3</th>
@@ -455,7 +482,7 @@
       </tbody>
     </table>                   
   <!-- Chandigarh Table 6               -->                
-  <table class="table" id="Chandigarh" style="display:none;">
+  <table class="table table-bordered" id="Chandigarh" style="display:none;">
       <thead>
         <tr>
           <th scope="col">Chandigarh(3)</th>
@@ -480,7 +507,7 @@
       </tbody>
     </table> 
   <!-- Chattisgarh Table 7               -->                
-  <table class="table" id="Chhattisgarh" style="display:none;">
+  <table class="table table-bordered" id="Chhattisgarh" style="display:none;">
       <thead>
         <tr>
           <th scope="col">Chhattisgarh(5)</th>
@@ -514,7 +541,7 @@
       </tbody>
     </table>    
   <!-- Dadar Table 8               -->                
-  <table class="table" id="Dadar" style="display:none;">
+  <table class="table table-bordered" id="Dadar" style="display:none;">
       <thead>
         <tr>
           <th scope="col">S. No.</th>
@@ -545,7 +572,7 @@
       </tbody>
     </table>    
   <!-- Daman Table 9               -->                
-  <table class="table" id="Daman" style="display:none;">
+  <table class="table table-bordered" id="Daman" style="display:none;">
       <thead>
         <tr>
           <th scope="col">S. No.</th>
@@ -576,11 +603,11 @@
       </tbody>
     </table>    
    <!-- Delhi Table 10               -->                
-   <table class="table" id="Delhi" style="display:none;">
+   <table class="table table-bordered" id="Delhi" style="display:none;">
       <thead>
         <tr>
-          <th scope="col">S. No.</th>
-          <th scope="col">Test Category(bhiar)</th>
+          <th scope="col">Delhi(42):Govt: 18 and Private: 24</th>
+          <th scope="col">Test Category</th>
           <th scope="col">Names of Government Institutes</th>
           <th scope="col">Names of Private Institutes</th>
         </tr>
@@ -589,20 +616,102 @@
         <tr>
           <th scope="row">1</th>
           <td>RT-PCR</td>
-          <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-          <td>Manipal Hospital, Tadepalli, Guntur</td>
+          <td>1. All India Institute Medical Sciences <br>
+            2. Lady Hardinge Medical College <br>
+            3. National Centre for Disease Control <br>
+            4. Ram Manohar Lohia Hospital <br>
+            5. Institute of Liver & Biliary Sciences<br>
+            6. Army Hospital Research & Referral<br>
+            7. Maulana Azad Medical College <br>
+            8. Vardhman Mahavir Medical College &
+            Safdarjung Hospital<br>
+            9. University College of Medical Sciences,
+            New Delhi<br>
+            10. Army Base Hospital, New Delhi <br>
+            11. *IGIB, CSIR, New Delhi <br>
+            12. Rajiv Gandhi Super Speciality Hospital,
+            Taharpur, Delhi <br>
+            13. Vallabhbhai Patel Chest Institute (VPCI),
+            Delhi <br>
+            14. *Defence Institute of Physiology & Allied Sciences (DIPAS), DRDO, Delhi <br>
+          </td>
+          <td>
+                1. Lal Path Labs, Block -E, Sector 18, Rohini,
+                Delhi <br>
+                2. #Dr Dangs Lab, C-2/1, Safadarjung
+                Development Area, New-Delhi <br>
+                3. Laboratory Services, Indraprastha Apollo
+                Hospitals, Sarita Vihar, New Delhi <br>
+                4. Max Lab, Max Super Spciality Hospital,
+                Saket, New-Delhi <br>
+                5. Sir Ganga Ram Hospital Clinical Lab
+                Services, Sir Ganga Ram Hospital, Delhi <br>
+                6. Oncquest Labs Ltd, 3-Factory Road, New-
+                Delhi <br>
+                7. Prognosis Laboratories, 515-16, Sector 19,
+                Dwarka <br>
+                8. City X-Ray & Scan Clinic Pvt Ltd, 4B/18,
+                Tilak Nagar, New-Delhi <br>
+                9. Lifeline Laboratory, H-11, Green Park
+                Extension, New-Delhi <br>
+                10. Dept of Lab Services, Dr. B.L. Kapur
+                Memorial Hospital, 5, Pusa Road, New-
+                Delhi <br>
+                11. Dept of Laboratory Services, Action Cancer
+                Hospital, A-4, Paschim Vihar (East), New-
+                Delhi <br>
+                12. Star Imaging & Path Lab Pvt Ltd, 4B/4, Tilak
+                Nagar, New Delhi<br>
+                13. Genestrings Diagnostic Centre Pvt Ltd, 3,
+                MMTC, Geetanjali Enclave, New Delhi<br>
+                14. Sterling Accuris Diagnostics, A divison of
+                Sterling Accuris Wellness Pvt Ltd, C-65, Block
+                C, Phase I, Okhla, New Delhi<br>
+                15. CRL Diagnostics Pvt Ltd, Plot No 10, Avtar
+                Enclave, Opposite Metro Pillar 227, Paschim
+                Vihar, Rohtak Road, New Delhi<br>
+                16. Dept of Lab Medicine, HCMCT, Manipal
+                Hospital, Main Road, Sector 6, Dwarka, New
+                Delhi<br>
+                17. Gen-X Diagnostics, 2/6, Sarvapriya Vihar,
+                New Delhi <br>
+                18. Noble Diagnostic Centre, WZ-409C, Janak
+                Park, Hari Nagar, Opposite DDU Hospital,
+                New Delhi <br>
+                19. Mahajan Imaging Pvt Ltd, E-19, Defence
+                Colony, New-Delhi <br>
+                20. Dept of Lab Sciences, Rajiv Gandhi Cancer
+                Institute & Research Centre, Sector 5, Rohini,
+                New-Delhi<br>
+                21. Metropolis Healthcare Ltd. E21, Block-B1,
+                Mohan Cooperative Industrial Estate, South
+                East Delhi<br>
+                22. Gagan Pathology & Imaging Pvt Ltd F-
+                26/21-22, Near Ayodhya Chowk,Sector 7,
+                Rohini, Delhi
+          </td>
         </tr>
         <tr>
           <th scope="row">2</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Medical College, Tirupati</td>
-          <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
+          <td>TrueNat</td>
+          <td>1. ESIC Hospital, Basaidarapur</td>
+          <td>1. Aakash Path Lab, Aakash Healthcare & Super
+            speciality Hospital, Road No 201, Sector 3,
+            Dwarka, New Delhi</td>
         </tr>
         <tr>
           <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
+          <td>CB NAAT</td>
+          <td>1. State TB Training and Demonstration
+            Centre, Jawaharlal Nehru Marg, Delhi
+            Gate<br>
+            2. Department of Microbiology, National
+            Institute of TB and Respiratory Diseases
+            (NITRD), New Delhi <br>
+            3. Northern Railway Central Hospital, New
+            Delhi</td>
+          <td>1. Dr P Bhasin Path Labs (P) Ltd, S 13 Greater
+            Kailash Part 1, New Delhi</td>
         </tr>
       </tbody>
     </table>    
@@ -610,8 +719,8 @@
    <table class="table" id="Lakshadweep" style="display:none;">
       <thead>
         <tr>
-          <th scope="col">S. No.</th>
-          <th scope="col">Test Category(bhiar)</th>
+          <th scope="col">Lakshadweep</th>
+          <th scope="col">Test Category</th>
           <th scope="col">Names of Government Institutes</th>
           <th scope="col">Names of Private Institutes</th>
         </tr>
@@ -638,10 +747,10 @@
       </tbody>
     </table>  
    <!-- Panducherry Table 12               -->                
-   <table class="table" id="Panducherry" style="display:none;">
+   <table class="table" id='Puducherry' style="display: none;">
       <thead>
         <tr>
-          <th scope="col">S. No.</th>
+          <th scope="col">Panducherry</th>
           <th scope="col">Test Category(bhiar)</th>
           <th scope="col">Names of Government Institutes</th>
           <th scope="col">Names of Private Institutes</th>
@@ -673,7 +782,7 @@
    <table class="table" id="Goa" style="display:none;">
       <thead>
         <tr>
-          <th scope="col">S. No.</th>
+          <th scope="col">Goa</th>
           <th scope="col">Test Category(bhiar)</th>
           <th scope="col">Names of Government Institutes</th>
           <th scope="col">Names of Private Institutes</th>
@@ -705,7 +814,7 @@
    <table class="table" id="Gujrat" style="display:none;">
       <thead>
         <tr>
-          <th scope="col">S. No.</th>
+          <th scope="col">Gujrat</th>
           <th scope="col">Test Category(bhiar)</th>
           <th scope="col">Names of Government Institutes</th>
           <th scope="col">Names of Private Institutes</th>
@@ -737,7 +846,7 @@
    <table class="table" id="Haryana" style="display:none;">
       <thead>
         <tr>
-          <th scope="col">S. No.</th>
+          <th scope="col">Haryana</th>
           <th scope="col">Test Category(bhiar)</th>
           <th scope="col">Names of Government Institutes</th>
           <th scope="col">Names of Private Institutes</th>
@@ -769,8 +878,8 @@
    <table class="table" id="Himachal" style="display:none;">
       <thead>
         <tr>
-          <th scope="col">S. No.</th>
-          <th scope="col">Test Category(bhiar)</th>
+          <th scope="col">Himachal</th>
+          <th scope="col">Test Category</th>
           <th scope="col">Names of Government Institutes</th>
           <th scope="col">Names of Private Institutes</th>
         </tr>
@@ -800,8 +909,8 @@
    <table class="table" id="JK" style="display:none;">
       <thead>
         <tr>
-          <th scope="col">S. No.</th>
-          <th scope="col">Test Category(bhiar)</th>
+          <th scope="col">J&K</th>
+          <th scope="col">Test Category</th>
           <th scope="col">Names of Government Institutes</th>
           <th scope="col">Names of Private Institutes</th>
         </tr>
@@ -831,8 +940,8 @@
    <table class="table" id="Jharkhand" style="display:none;">
       <thead>
         <tr>
-          <th scope="col">S. No.</th>
-          <th scope="col">Test Category(bhiar)</th>
+          <th scope="col">Jharkhand</th>
+          <th scope="col">Test Category</th>
           <th scope="col">Names of Government Institutes</th>
           <th scope="col">Names of Private Institutes</th>
         </tr>
@@ -863,8 +972,8 @@
      <table class="table" id="Karnataka" style="display:none;">
       <thead>
         <tr>
-          <th scope="col">S. No.</th>
-          <th scope="col">Test Category(bhiar)</th>
+          <th scope="col">Karnataka</th>
+          <th scope="col">Test Category</th>
           <th scope="col">Names of Government Institutes</th>
           <th scope="col">Names of Private Institutes</th>
         </tr>
@@ -895,8 +1004,8 @@
    <table class="table" id="Kerla" style="display:none;">
       <thead>
         <tr>
-          <th scope="col">S. No.</th>
-          <th scope="col">Test Category(bhiar)</th>
+          <th scope="col">Kerla</th>
+          <th scope="col">Test Category</th>
           <th scope="col">Names of Government Institutes</th>
           <th scope="col">Names of Private Institutes</th>
         </tr>
@@ -927,8 +1036,8 @@
         <table class="table" id="MP" style="display:none;">
             <thead>
               <tr>
-                <th scope="col">S. No.</th>
-                <th scope="col">Test Category(bhiar)</th>
+                <th scope="col">MP</th>
+                <th scope="col">Test Category</th>
                 <th scope="col">Names of Government Institutes</th>
                 <th scope="col">Names of Private Institutes</th>
               </tr>
@@ -958,8 +1067,8 @@
         <table class="table" id="Maharastra" style="display:none;">
             <thead>
               <tr>
-                <th scope="col">S. No.</th>
-                <th scope="col">Test Category(bhiar)</th>
+                <th scope="col">Maharastra</th>
+                <th scope="col">Test Category</th>
                 <th scope="col">Names of Government Institutes</th>
                 <th scope="col">Names of Private Institutes</th>
               </tr>
@@ -990,8 +1099,8 @@
         <table class="table" id="Manipur" style="display:none;">
             <thead>
               <tr>
-                <th scope="col">S. No.</th>
-                <th scope="col">Test Category(bhiar)</th>
+                <th scope="col">Manipur</th>
+                <th scope="col">Test Category</th>
                 <th scope="col">Names of Government Institutes</th>
                 <th scope="col">Names of Private Institutes</th>
               </tr>
@@ -1022,8 +1131,8 @@
         <table class="table" id="Meghalaya" style="display:none;">
             <thead>
               <tr>
-                <th scope="col">S. No.</th>
-                <th scope="col">Test Category(bhiar)</th>
+                <th scope="col">Meghalaya</th>
+                <th scope="col">Test Category</th>
                 <th scope="col">Names of Government Institutes</th>
                 <th scope="col">Names of Private Institutes</th>
               </tr>
@@ -1053,8 +1162,8 @@
         <table class="table" id="Mijoram" style="display:none;">
             <thead>
               <tr>
-                <th scope="col">S. No.</th>
-                <th scope="col">Test Category(bhiar)</th>
+                <th scope="col">Mijoram</th>
+                <th scope="col">Test Category</th>
                 <th scope="col">Names of Government Institutes</th>
                 <th scope="col">Names of Private Institutes</th>
               </tr>
@@ -1084,8 +1193,8 @@
         <table class="table" id="Nagaland" style="display:none;">
             <thead>
               <tr>
-                <th scope="col">S. No.</th>
-                <th scope="col">Test Category(bhiar)</th>
+                <th scope="col">Nagaland</th>
+                <th scope="col">Test Category</th>
                 <th scope="col">Names of Government Institutes</th>
                 <th scope="col">Names of Private Institutes</th>
               </tr>
@@ -1115,8 +1224,8 @@
         <table class="table" id="Odisha" style="display:none;">
             <thead>
               <tr>
-                <th scope="col">S. No.</th>
-                <th scope="col">Test Category(bhiar)</th>
+                <th scope="col">Odisha</th>
+                <th scope="col">Test Category</th>
                 <th scope="col">Names of Government Institutes</th>
                 <th scope="col">Names of Private Institutes</th>
               </tr>
@@ -1146,8 +1255,8 @@
         <table class="table" id="Punjab" style="display:none;">
             <thead>
               <tr>
-                <th scope="col">S. No.</th>
-                <th scope="col">Test Category(bhiar)</th>
+                <th scope="col">Punjab</th>
+                <th scope="col">Test Category</th>
                 <th scope="col">Names of Government Institutes</th>
                 <th scope="col">Names of Private Institutes</th>
               </tr>
@@ -1177,8 +1286,8 @@
          <table class="table" id="Rajsthan" style="display:none;">
             <thead>
               <tr>
-                <th scope="col">S. No.</th>
-                <th scope="col">Test Category(bhiar)</th>
+                <th scope="col">Rajsthan</th>
+                <th scope="col">Test Category</th>
                 <th scope="col">Names of Government Institutes</th>
                 <th scope="col">Names of Private Institutes</th>
               </tr>
@@ -1208,8 +1317,8 @@
          <table class="table" id="Sikkim" style="display:none;">
             <thead>
               <tr>
-                <th scope="col">S. No.</th>
-                <th scope="col">Test Category(bhiar)</th>
+                <th scope="col">Sikkim</th>
+                <th scope="col">Test Category</th>
                 <th scope="col">Names of Government Institutes</th>
                 <th scope="col">Names of Private Institutes</th>
               </tr>
@@ -1239,8 +1348,8 @@
          <table class="table" id="Tamilnadu" style="display:none;">
             <thead>
               <tr>
-                <th scope="col">S. No.</th>
-                <th scope="col">Test Category(bhiar)</th>
+                <th scope="col">Tamilnadu</th>
+                <th scope="col">Test Category</th>
                 <th scope="col">Names of Government Institutes</th>
                 <th scope="col">Names of Private Institutes</th>
               </tr>
@@ -1270,8 +1379,8 @@
          <table class="table" id="Telangana" style="display:none;">
             <thead>
               <tr>
-                <th scope="col">S. No.</th>
-                <th scope="col">Test Category(bhiar)</th>
+                <th scope="col">Telangana</th>
+                <th scope="col">Test Category</th>
                 <th scope="col">Names of Government Institutes</th>
                 <th scope="col">Names of Private Institutes</th>
               </tr>
@@ -1301,8 +1410,8 @@
          <table class="table" id="Tripura" style="display:none;">
             <thead>
               <tr>
-                <th scope="col">S. No.</th>
-                <th scope="col">Test Category(bhiar)</th>
+                <th scope="col">Tripura</th>
+                <th scope="col">Test Category</th>
                 <th scope="col">Names of Government Institutes</th>
                 <th scope="col">Names of Private Institutes</th>
               </tr>
@@ -1332,8 +1441,8 @@
 <table class="table" id="UP" style="display:none;">
       <thead>
         <tr>
-          <th scope="col">S. No.</th>
-          <th scope="col">Test Category(bhiar)</th>
+          <th scope="col">UP</th>
+          <th scope="col">Test Category</th>
           <th scope="col">Names of Government Institutes</th>
           <th scope="col">Names of Private Institutes</th>
         </tr>
@@ -1363,8 +1472,8 @@
 <table class="table" id="Uttrkhand" style="display:none;">
       <thead>
         <tr>
-          <th scope="col">S. No.</th>
-          <th scope="col">Test Category(bhiar)</th>
+          <th scope="col">Uttrkhand</th>
+          <th scope="col">Test Category</th>
           <th scope="col">Names of Government Institutes</th>
           <th scope="col">Names of Private Institutes</th>
         </tr>
@@ -1394,8 +1503,8 @@
 <table class="table" id="WB" style="display:none;">
       <thead>
         <tr>
-          <th scope="col">S. No.</th>
-          <th scope="col">Test Category(bhiar)</th>
+          <th scope="col">WB</th>
+          <th scope="col">Test Category</th>
           <th scope="col">Names of Government Institutes</th>
           <th scope="col">Names of Private Institutes</th>
         </tr>
@@ -1421,8 +1530,8 @@
         </tr>
       </tbody>
     </table>                                                                                    
-                             
-
+</div>                             
+</div>
 
 </body>
 </html>
