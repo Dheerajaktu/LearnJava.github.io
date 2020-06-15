@@ -8,370 +8,578 @@
      <script src="./bootstrap.min.js" type="text/javascript"></script>
       <title>COVID-19 Test Labs</title>
 
-      <script>
+  <script>
 
-            function defaultLabsStatus(){
-               document.getElementById("AP").style.display = "none";
-               document.getElementById("Andaman").style.display = "none";
-               document.getElementById("Arunachal").style.display = "none";
-               document.getElementById("Assam").style.display = "none";
-               $('#Bihar').css('display', 'none');
-               document.getElementById("Chandigarh").style.display = "none";
-               document.getElementById("Chhattisgarh").style.display = "none";
-               $('#Dader').css('display', 'none');
-               $('#Daman').css('display', 'none');
-               $('#Delhi').css('display', 'none');
+    function defaultLabsStatus() {
+      document.getElementById("AP").style.display = "none";
+      document.getElementById("Andaman").style.display = "none";
+      document.getElementById("Arunachal").style.display = "none";
+      document.getElementById("Assam").style.display = "none";
+      document.getElementById("Uttar").style.display = "none";
+      $('#Bihar').css('display', 'none');
+      document.getElementById("Chandigarh").style.display = "none";
+      document.getElementById("Chhattisgarh").style.display = "none";
+      $('#Dader').css('display', 'none');
+      $('#Daman').css('display', 'none');
+      $('#Delhi').css('display', 'none');
 
-               $('#Lakshadweep').css('display', 'none');
-               $('#Puducherry').css('display', 'none');
-               $('#Goa').css('display', 'none');
-               
+      $('#Lakshadweep').css('display', 'none');
+      $('#Puducherry').css('display', 'none');
+      $('#Goa').css('display', 'none');
+      $('#Gujarat').css('display', 'none');
+      
+      // $('#Uttar').css('display', 'none');
+    }
 
-               
-               
+    $(function () {
+      $("#states").change(function () {
+        let selectedState = $(this).find("option:selected").text();
+        if (selectedState) {
+          showStateLabs(selectedState);
+        }
+        else {
+          alert('Please Select State');
+        }
+      });
+    });
+    function showStateLabs(selectedState) {
+      if (selectedState == 'Andhra Pradesh') {
+        defaultLabsStatus();
+        document.getElementById("AP").style.display = "block";
+      }
+      if (selectedState == 'Andaman and Nicobar Islands') {
+        alert('No Records about to Andaman and Nicobar Islands, please visi at official State Website');
+      }
+      if (selectedState == 'Arunachal Pradesh') {
+        defaultLabsStatus();
+        document.getElementById("Arunachal").style.display = "block";
+      }
+      if (selectedState == 'Assam') {
+        defaultLabsStatus();
+        document.getElementById("Assam").style.display = "block";
+      }
+      if (selectedState == 'Bihar') {
+        defaultLabsStatus();
+        $("#Bihar").css('display', 'block');
+      }
+      if (selectedState == 'Chandigarh') {
+        defaultLabsStatus();
+        document.getElementById("Chandigarh").style.display = "block";
+      }
+      if (selectedState == 'Chhattisgarh') {
+        defaultLabsStatus();
+        document.getElementById("Chhattisgarh").style.display = "block";
+      }
+      if (selectedState == 'Dadar and Nagar Haveli') {
+        defaultLabsStatus();
+        alert('No Records Exist');
 
-               
+      }
+      if (selectedState == 'Daman and Diu') {
+        defaultLabsStatus()
+        alert('No Records Exist');
+      }
+      if (selectedState == 'Delhi') {
+        defaultLabsStatus();
+        document.getElementById("Delhi").style.display = "block";
+      }
+      if (selectedState == 'Lakshadweep') {
+        defaultLabsStatus();
+        alert('No Records Exist');
+      }
+      if (selectedState == 'Puducherry') {
+        defaultLabsStatus();
+        alert('No Records Exist');
+      }
+      if (selectedState == 'Goa') {
+        defaultLabsStatus();
+        alert('No Records Exist');
+      }
+      if (selectedState == 'Gujarat') {
+        defaultLabsStatus();
+        document.getElementById("Gujarat").style.display = "block";
+      }
+      if (selectedState == 'Uttar Pradesh') {
+        defaultLabsStatus();
+        console.log('========')
+        document.getElementById("Uttar").style.display = "block";
+        // $('#Uttar').css('display','block');
+      }
 
-            }
-            
-            $(function () {
-                    $("#states").change(function () {
-                        let selectedState = $(this).find("option:selected").text();
-                        if(selectedState){
-                        showStateLabs(selectedState);
-                        }
-                        else{
-                             alert('Please Select State');
-                          }
-                    });
-                });
-            function showStateLabs(selectedState) {
-                        if(selectedState == 'Andhra Pradesh'){
-                              defaultLabsStatus();
-                              document.getElementById("AP").style.display = "block";   
-                        }
-                        if(selectedState == 'Andaman and Nicobar Islands'){        
-                            alert('No Records about to Andaman and Nicobar Islands, please visi at official State Website');
-                        }
-                        if(selectedState == 'Arunachal Pradesh'){
-                              defaultLabsStatus();
-                              document.getElementById("Arunachal").style.display = "block";   
-                        }
-                        if(selectedState == 'Assam'){
-                              defaultLabsStatus();
-                              document.getElementById("Assam").style.display = "block";   
-                        }
-                        if(selectedState == 'Bihar'){
-                              defaultLabsStatus();
-                              $("#Bihar").css('display', 'block');   
-                        }
-                        if(selectedState == 'Chandigarh'){
-                              defaultLabsStatus();
-                              document.getElementById("Chandigarh").style.display = "block"; 
-                        }
-                        if(selectedState == 'Chhattisgarh'){
-                              defaultLabsStatus();
-                              document.getElementById("Chhattisgarh").style.display = "block"; 
-                        }
-                        if(selectedState == 'Dadar and Nagar Haveli'){    
-                              defaultLabsStatus();    
-                            alert('No Records Exist');
-                            
-                        }
-                        if(selectedState == 'Daman and Diu'){   
-                              defaultLabsStatus()     
-                            alert('No Records Exist');
-                        }
-                        if(selectedState == 'Delhi'){
-                              defaultLabsStatus();
-                              document.getElementById("Delhi").style.display = "block"; 
-                        }
-                        if(selectedState == 'Lakshadweep'){  
-                              defaultLabsStatus();      
-                            alert('No Records Exist');
-                        }
-                        if(selectedState == 'Puducherry'){  
-                              defaultLabsStatus();      
-                            alert('No Records Exist');
-                        }
-                        if(selectedState == 'Goa'){      
-                              defaultLabsStatus();  
-                            alert('No Records Exist');
-                        }
-                  
-                  }
-                  
-                
-            </script>
-            
+
+    }
+
+
+  </script>
+
 
 
 
 
 </head>
-<body style="background-image: url('/images/bg1.jpg');">
-<div>
-   <div class="">
-       <nav class="navbar navbar-expand-lg navbar-light" style="box-shadow:0px 1px 8px silver;background-color:white;width:100%">
 
-  <div  id="navbarTogglerDemo01">
-        <p class="navbar-brand" style="text-align:center;color: dodgerblue;font-size: 20px;">Search Labs for Covid-19 Test</p>
+<body style="background-image: url('/images/bg1.jpg');">
+  <div>
+    <div class=""style="box-shadow:0px 1px 8px silver;background-color:white;width: 100%;">
+
+        
+
+   
+          <p class="" style="text-align:center;color: dodgerblue;font-size: 20px;">Search Labs for Covid-19
+            Test</p>
+    </div>
   </div>
-</nav>
-</div>
-</div>
-<center>
-      
-<div class="form-group" style="margin-left:10%;margin-right:10%;">
+  <div class="">
+    <ul>
+<li>Government laboratories : 646</li>
+<li>Private laboratories : 247</li>
+<li>Real-Time RT PCR for COVID-19: : 533 (Govt: 347 + Private: 186)</li>
+<li>TrueNat Test for COVID-19 :   289 (Govt: 274 + Private: 15)</li>
+<li>CBNAAT Test for COVID-19 : 71 (Govt: 25 + Private: 46)</li>
+<li>*CSIR/DBT/DST/DAE/ICAR/DRDO Laboratories.</li>
+<li>#Laboratories approved for both Real-Time RT-PCR and TrueNat/CBNAAT</li>
+<li>$Laboratories approved for both TrueNAT and CBNAAT</li>
+<li><b>Note: All Data taken from ICMR official Website</b></li>
+</ul>
+
+
+  </div>
+  <center>
+
+    <div class="form-group" style="margin-left:10%;margin-right:10%;">
       <label for="state" style="font-size: 20px;color:dodgerblue">Select Your State</label>
       <select class="form-control" id="states">
-            <option value="">Select State</option>
-            <option value=”Andhra”>Andhra Pradesh</option>x
-            <option value=”Andaman”>Andaman and Nicobar Islands</option>
-            <option value=”Arunachal”>Arunachal Pradesh</option>
-            <option value=”Assam”>Assam</option>
-            <option value=”Bihar”>Bihar</option>
-            <option value=”Chandigarh”>Chandigarh</option>
-            <option value=”Chhattisgarh”>Chhattisgarh</option>
-            <option value=”Dadar”>Dadar and Nagar Haveli</option>
-            <option value=”Daman”>Daman and Diu</option>
-            <option value=”Delhi”>Delhi</option>
+        <option value="">Select State</option>
+        <option value=”Andhra”>Andhra Pradesh</option>x
+        <option value=”Andaman”>Andaman and Nicobar Islands</option>
+        <option value=”Arunachal”>Arunachal Pradesh</option>
+        <option value=”Assam”>Assam</option>
+        <option value=”Bihar”>Bihar</option>
+        <option value=”Chandigarh”>Chandigarh</option>
+        <option value=”Chhattisgarh”>Chhattisgarh</option>
+        <option value=”Dadar”>Dadar and Nagar Haveli</option>
+        <option value=”Daman”>Daman and Diu</option>
+        <option value=”Delhi”>Delhi</option>
 
-            <option value=”Lakshadweep”>Lakshadweep</option>
-            <option value=”Puducherry”>Puducherry</option> 
-            <option value=”Goa”>Goa</option>
-            <option value=”Gujarat”>Gujarat</option>
-            <option value=”Haryana”>Haryana</option>
-            <option value=”Himachal Pradesh”>Himachal Pradesh</option>
-            <option value=”Jammu and Kashmir”>Jammu and Kashmir</option>
-            <option value=”Jharkhand”>Jharkhand</option>
-            <option value=”Karnataka”>Karnataka</option>
-            <option value=”Kerala”>Kerala</option>
+        <option value=”Lakshadweep”>Lakshadweep</option>
+        <option value=”Puducherry”>Puducherry</option>
+        <option value=”Goa”>Goa</option>
+        <option value=”Gujarat”>Gujarat</option>
+        <option value=”Haryana”>Haryana</option>
+        <option value=”Himachal Pradesh”>Himachal Pradesh</option>
+        <option value=”Jammu and Kashmir”>Jammu and Kashmir</option>
+        <option value=”Jharkhand”>Jharkhand</option>
+        <option value=”Karnataka”>Karnataka</option>
+        <option value=”Kerala”>Kerala</option>
 
-            <option value=”Madhya Pradesh”>Madhya Pradesh</option>
-            <option value=”Maharashtra”>Maharashtra</option>
-            <option value=”Manipur”>Manipur</option>
-            <option value=”Meghalaya”>Meghalaya</option>
-            <option value=”Mizoram”>Mizoram</option>
-            <option value=”Nagaland”>Nagaland</option>
-            <option value=”Odisha”>Odisha</option>
-            <option value=”Punjab”>Punjab</option>
-            <option value=”Rajasthan”>Rajasthan</option>
-            <option value=”Sikkim”>Sikkim</option>
+        <option value=”Madhya Pradesh”>Madhya Pradesh</option>
+        <option value=”Maharashtra”>Maharashtra</option>
+        <option value=”Manipur”>Manipur</option>
+        <option value=”Meghalaya”>Meghalaya</option>
+        <option value=”Mizoram”>Mizoram</option>
+        <option value=”Nagaland”>Nagaland</option>
+        <option value=”Odisha”>Odisha</option>
+        <option value=”Punjab”>Punjab</option>
+        <option value=”Rajasthan”>Rajasthan</option>
+        <option value=”Sikkim”>Sikkim</option>
 
-            <option value=”Tamil”>Tamil Nadu</option>
-            <option value=”Telangana”>Telangana</option>
-            <option value=”Tripura”>Tripura</option>
-            <option value=”Uttar”>Uttar Pradesh</option>
-            <option value=”Uttarakhand”>Uttarakhand</option>
-            <option value=”West”>West Bengal</option>
+        <option value=”Tamil”>Tamil Nadu</option>
+        <option value=”Telangana”>Telangana</option>
+        <option value=”Tripura”>Tripura</option>
+        <option value=”Uttar”>Uttar Pradesh</option>
+        <option value=”Uttarakhand”>Uttarakhand</option>
+        <option value=”West”>West Bengal</option>
       </select>
     </div>
-</center>   
-<div class="container">
- <div class="row">     
- <!-- Andhra Table 1               -->
-            <table class="table table-bordered" id="AP" style="display:none;">
-                  <thead>
-                    <tr>
-                      <th scope="col">Andhra Pradesh</th>
-                      <th scope="col">Test Category</th>
-                      <th scope="col">Names of Government Institutes</th>
-                      <th scope="col">Names of Private Institutes</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>RT-PCR</td>
-                      <td>1: Sri Venkateswara Institute of Medical Sciences, Tirupati
-                            <br>
-                           2: Sri Venkateswara Medical College,Tirupati
-                            <br>
-                           3: Rangaraya Medical College, Kakinada
-                            <br>
-                           4: #Sidhartha Medical College, Vijaywada
-                            <br>
-                           5: Govt. Medical College, Ananthpur
-                            <br>
-                           6: Guntur Medical College, Guntur
-                            <br>
-                           7: Rajiv Gandhi Institute of Medical Sciences, Kadapa
-                            <br>
-                           8: Andhra Medical College, Visakhapatnam
-                            <br>
-                           9: Govt. Kurnool Medical College, Kurnool
-                            <br>
-                           10: Govt. Medical College, Srikakulam
-                            <br>
-                           11: AIIMS, Mangalagiri
-                            <br>
-                      </td>
-                      <td>1-Manipal Hospital, Tadepalli, Guntur
-                           <br>
-                          2-PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV, kayanamandapam, Tirupathi
-                          <br>
-                          3- Apollo Health and Lifestyle Ltd, Vijayawada, Diagnostics Lab, 40-5-6, Parmeshwara Complex, Tikkle Road, Vijayawada
-                          <br>
-                          4- Vijaya Diagnostic Centre Pvt. Ltd., Plot No: 43/198, Old Rainbow Hospital Lane, N R Peta, Kurnool
-                          <br>
-                          5- Maharaja Institute of Medical Sciences,Vizianagaram
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>TrueNat</td>
-                      <td>12-Damien TB Research Centre, Nellore
-                          13- SVRR Govt. General Hospital, Tirupati<br>
-                          14- Community Health Centre, Gadi Veedhi
-                          Saluru, Vizianagaram
-                          <br>
-                          15-Community Health Centre, Bhimavaram,
-                          West Godavari District
-                          <br>
-                          16-Community Health Centre, Patapatnam
-                          <br>
-                          17-Community Health Center, Nandyal,
-                          Banaganapalli, Kurnool
-                          <br>
-                          18- GSL Medical College & General Hospital,
-                          Rajahnagram, East Godavari District
-                          <br>
-                          19- District Hospital, Madnapalle, Chittoor
-                          District
-                          <br>
-                          20- District Hospital, APVVP, Pulivendula,
-                          Kadapa District
-                          <br>
-                          21- District Hospital, Rajahmundry, East
-                          Godavari District
-                          <br>
-                          22- District Hospital, Noonepalli, Nandyal,
-                          Kurnool
-                          <br>
-                          23- DistrictHospital, Anakapalli, Vishakhapatnam
-                          <br>
-                          24- District Hospital, Hindupur, Anantpur
-                          <br>
-                          25- District Hospital, Proddatur
-                          <br>
-                          26- District Hospital, Machlipatnam
-                          <br>
-                          27- District Hospital, Atmakur
-                          <br>
-                          28- District Hospital, Markapur
-                          <br>
-                          District Hospital, Tekkali
-                          <br>
-                          29- Area Hospital, Rampachodavaram, East
-                          Godavari District
-                          <br>
-                          30- Area Hospital, Palamaner, Chittoor
-                          <br>
-                          31- Area Hospital, Amalapuram, East
-                          Godavari District
-                          <br>
-                          32- Area Hospital, Adoni, Kurnool
-                          <br>
-                          33- Area Hospital, Chirala
-                          <br>
-                          34- Area Hospital, Kandukuru
-                          <br>
-                          35- Area Hospital, Narsipatnam
-                          <br>
-                          36- Area Hospital, Parvathipuram
-                          <br>
-                          37- Area Hospital, Parvathipuram
-                          <br>
-                          38- Area Hospital, Tadepalligudem
-                          <br>
-                          39- Area Hospital, Kavali
-                          <br>
-                          40- Area Hospital, Tenali
-                          <br>
-                          41- Area Hospital, Narasaraopet, Guntur
-                          <br>
-                          42- Area Hospital, Macheria, Guntur
-                          <br>
-                          43- Area Hospital, Kadiri
-                          <br>
-                          44- Area Hospital, Gandhinagar, Nuzividu
-                          <br>
-                          45- ACSR Govt. Medical College, Nellore
-                          <br>
-                          46- Rural Development Trust, Bathalpalli
-                          <br>
-                          47- Govt. General Hospital, Guntur
-                          <br>
-                          48- Govt. General Hospital/ RIMS, Ongole
-                          <br>
-                          49- DST Lab Govt. Chest Hospital,
-                          Vishakhapatnam
-                          <br>
-                          50- District Hospital, Vizianagram
-                          <br>
-                          51- District Hospital, Chittoor
-                          <br>
-                          52- District Hospital, Eluru
-                          <br>
-                          53- SHAR Hospital, Sriharikota, Nellore
-                          <br>
-                      </td>
+  </center>
+  <div class="container" style="margin-left:5%;margin-right: 5%;">
+    <div class="row" style="">
+                    <!-- UP Table 34               -->
+                    <table class="table" id="Uttar" style="display:none;">
+                      <thead>
+                        <tr>
+                          <th scope="col">Uttar Pradesh(108): Govt: 98, Private: 10</th>
+                          <th scope="col">Test Category</th>
+                          <th scope="col">Names of Government Institutes</th>
+                          <th scope="col">Names of Private Institutes</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>RT-PCR</td>
+                          <td>1. King George Medical University, Lucknow<br>
+                              2. Institute of Medical Sciences, Banaras Hindu University, Varanasi<br>
+                              3. Jawaharlal Nehru Medical College, Aligarh<br>
+                              4. Command Hospital, Lucknow<br>
+                              5. Lala Lajpat Rai Memorial Medical College, Meerut<br>
+                              6. Sanjay Gandhi Post Graduate Institute, Lucknow<br>
+                              7. MLN Medical College, Allahabad<br>
+                              8. Uttar Pradesh University of Medical Sciences (Formerly Uttar Pradesh RIMS), Saifai<br>
+                              9. MLB Medical College, Jhansi<br>
+                             10. ICMR-Regional Medical Research Centre, Gorakhpur<br>
+                             11. SN Medical College, Agra<br>
+                            12. #ICMR-National JALMA Institute for Leprosy & Other Mycobacterial Diseases, Agra<br>
+                            13. RML Institute of Medical Sciences, Lucknow<br>
+                            14. Govt. Institute of Medical Sciences, Noida<br>
+                            15. #GSVM Medical College, Kanpur <br>
+                            16. National Institute of Biologicals, Noida
+                            (High-throughput Laboratory)<br>
+                            17. BRD Medical College, Gorakhpur<br>
+                            18. *Indian Institute of Toxicology Research,
+                            Lucknow<br>
+                            19. *Birbal Sahni Institute of Palaeosciences,
+                            Lucknow<br>
+                            20. *CentralDrugResearchInstitute,Lucknow <br>
+                            21. *ICAR- Indian Veterinary Research
+                            Institute (IVRI), Izatnagar<br>
+                            22. Super Specialty Pediatric Hospital and Postgraduate Teaching Institute (SSPHPGTI),Noida<br>
+                            23. College of Veterinary Sciences and Animal Husbandry, UP Pt. Deen Dayal Upadhyaya Pashu Chikitsa Vishwavidyalaya evam Go Anusandhan Sansthan, Mathura<br>
+                          </td>
+                          <td>1. RML Mehrotra Pathology Pvt Ltd, Nirala
+                            Nagar, Lucknow<br>
+                            2. Dept of Lab Medicine, Jaypee Hospital,
+                            Sector 128, Noida<br>
+                            3. Central Lab, Sharda Hospital, Plot no 32,34,
+                            Knowledge Park-III, Greater Noida<br>
+                            4. Medical Testing Lab, Yashoda Superspeciality Hospital, H-1, 24, 26-27, Kaushambi, Ghaziabad <br>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>RT-PCR</td>
+                          <td>Sri Venkateswara Medical College, Tirupati</td>
+                          <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+                            Tirupathi</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>TrueNat</td>
+                          <td>1. District Combined Hospital, District Balrampur<br>
+                              2. District Combined Hospital, District Basti <br>
+                              3. Sarojani Naidu Samarak Hospital,
+                              District Firozabad<br>
+                              4. Babu Eswar Saran District Hospital,
+                              Gonda<br>
+                              5. Amar Shahid late Uma Nath Singh <br>
+                              6. District Hospital, Jaunpur<br>
+                              7. District Hospital, Bahraich <br>
+                              8. District Male Hospital, Ayodhya <br>
+                              9. District Combined Hospital, Mahrajganj <br>
+                              10. District Femal Hospital, Muzaffarnagar <br>
+                              11. District Male Hospital, Pratapgarh <br>
+                              12. District Hospital, Ballia <br>
+                              13. Pt.Ramprasad Bismil, District Combined Hospital Shahjahanpur <br>
+                              14. Bairister Yusuf Emam, Divisional
+                              Hospital, Mirzapur <br>
+                              15. Mahatama Gandhi, District Combined
+                              Hospital, Siddharth Nagar <br>
+                              16. Balrampur Hospital, Lucknow <br>
+                              17. Malkhan Singh Joint District Hospital,
+                              Aligarh <br>
+                              18. District Hospital, Ambedkar Nagar <br>
+                              19. Pt. Din Dayal Upahadhy, District
+                              Combined Hospital, Moradabad <br>
+                              20. Motilal Nehru Divisional Hospital,
+                              Prayagraj <br>
+                              21. Divisional Hospital, Azamgarh <br>
+                              22. District Male Hospital, Budaun <br>
+                              23. Babu Mohan Singh, Joint District
+                              Hospital, Deoria <br>
+                              24. Bheemrao Ambedkar Multi Superspeciality District Hospital, G. B
+                              Nagar<br>
+                              25. Netaji Subhash Chandra Bose District Hospital, Gorakhpur <br>
+                              26. Rana Devi Madhav Singh, District
+                              Hospital, Raebareli<br>
+                              27. District Hospital, Sultanpur <br>
+                              28. Maharana Pratap Joint District Hospital,
+                              Bareily <br>
+                              29. Rafi Ahmad Kidwai memorial District
+                              Hospital, Barabanki <br>
+                              30. District Hospital, Etah <br>
+                              31. M.M.G District Hospital, Ghaziabad <br>
+                              32. Joint District Hospital, Manjhanpur,
+                              Kaushambi<br>
+                              33. District Male Hospital, Sitapur <br>
+                              34. District Male Hospital, Kheri <br>
+                              35. Babu Banarasi Das govt. District
+                              Hospital, Bulandsahar
+                              District Hospital, Agra <br>
+                              36. Joint District Hospital, Amethi <br>
+                              37. District Hospital, Baghpat <br>
+                              38. District Male & Eye Hospital, Padrauna,
+                              Kushinagar <br>
+                              39. U.H.M District Male Hospital, Kanpur
+                              Nagar <br>
+                              40. P.L. Sharma District Hospital, Meerut <br>
+                              41. Shadilal Memorial Community Health
+                              Centre, Shamli <br>
+                              42. Uma Shankar Dixit Joint District
+                              Hospital, Unnao <br>
+                              43. S.S.P.G District Hospital, Varanasi <br>
+                              44. 100 Beded District Hospital, Aauraiya <br>
+                              45. District Hospital, Banda <br>
+                              46. District Combined Hospital, Bijnor <br>
+                              47. Pt. Kamlapati Tripathi Joint District
+                              Hospital, Chandauli<br>
+                              48. Joint District Hospital, Chitrakoot <br>
+                              49. Dr. Bheemrao Ambedkar District
+                              Hospital, Etawah<br>
+                              50. Dr. Ram Manohar Lohia District
+                              Hospital, Farrukabad <br>
+                              51. District Hospital, Fatehpur <br>
+                              52. Dr. Mukhtar Ansari District Hospital,
+                              Ghazipur <br>
+                              53. Deewan Satrughan District Hospital,
+                              Hamirpur<br>
+                              54. District Hospital, Hapur <br>
+                              55. Pt. Ramdayal Trivedi District Hospital,
+                              Hardoi <br>
+                              56. Bangla District Hospital, Hathras <br>
+                              57. Joint District Hospital, J.P Nagar <br>
+                              58. District Male Hospital, Jalaun <br>
+                              59. Divisional District Hospital, Jhansi <br>
+                              60. 100 Beded District Hospital, Kannauj <br>
+                              61. Joint District Hospital, Akbarpur, Kanpur
+                              Dehat<br>
+                              62. Joint District Hospital, Kanshiram Nagar <br>
+                              61. Manywar Kanshiram Joint District
+                              Hospital, Lalitpur<br>
+                              62. District Hospital, Mahoba <br>
+                              63. Maharaja Tez Singh District Hospital,
+                              Mainpur <br>
+                              64. Mahrishi Dayanad Saraswati District
+                              Hospital, Mathura <br>
+                              65. District Hospital, Ghazipur Tiraha, Mau <br>
+                              66. Joint District Hospital, Pilibhit <br>
+                              67. District Hospital, Rampur <br>
+                              68. Seth Baldev Das District Hospital,
+                              Saharanpur <br>
+                              69. Joint District Hospital, Manjhanpur,
+                              Sambhal <br>
+                              70. Joint District Hospital, Sant Kabir Nagar <br>
+                              71. Maharaja Balwant District Hospital,
+                              Santravidas Nagar <br>
+                              72. Joint District Hospital, Bhinga, Shrawasti <br>
+                              73.   Joint District Hospital, Robertsganj,
+                              Sonbhadra<br>
+      
+                          </td>
+                          <td>1. Heritage Speciality Lab, Lanka, Varanasi</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>CB NAAT</td>
+                          <td>No </td>
+                          <td>1. $ Gian Life Care Ltd, 7/216(6), Swaroop
+                            Nagar, Kanpur</td>
+                        </tr>
+                      </tbody>
+                    </table>
+      <!-- Andhra Table 1               -->
+      <table class="table" id="AP" style="display:none;">
+        <thead>
+          <tr>
+            <th scope="col">Andhra Pradesh</th>
+            <th scope="col">Test Category</th>
+            <th scope="col">Names of Government Institutes</th>
+            <th scope="col">Names of Private Institutes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>RT-PCR</td>
+            <td>1: Sri Venkateswara Institute of Medical Sciences, Tirupati
+              <br>
+              2: Sri Venkateswara Medical College,Tirupati
+              <br>
+              3: Rangaraya Medical College, Kakinada
+              <br>
+              4: #Sidhartha Medical College, Vijaywada
+              <br>
+              5: Govt. Medical College, Ananthpur
+              <br>
+              6: Guntur Medical College, Guntur
+              <br>
+              7: Rajiv Gandhi Institute of Medical Sciences, Kadapa
+              <br>
+              8: Andhra Medical College, Visakhapatnam
+              <br>
+              9: Govt. Kurnool Medical College, Kurnool
+              <br>
+              10: Govt. Medical College, Srikakulam
+              <br>
+              11: AIIMS, Mangalagiri
+              <br>
+            </td>
+            <td>1-Manipal Hospital, Tadepalli, Guntur
+              <br>
+              2-PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV, kayanamandapam,
+              Tirupathi
+              <br>
+              3- Apollo Health and Lifestyle Ltd, Vijayawada, Diagnostics Lab, 40-5-6, Parmeshwara Complex, Tikkle Road,
+              Vijayawada
+              <br>
+              4- Vijaya Diagnostic Centre Pvt. Ltd., Plot No: 43/198, Old Rainbow Hospital Lane, N R Peta, Kurnool
+              <br>
+              5- Maharaja Institute of Medical Sciences,Vizianagaram
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>TrueNat</td>
+            <td>12-Damien TB Research Centre, Nellore
+              13- SVRR Govt. General Hospital, Tirupati<br>
+              14- Community Health Centre, Gadi Veedhi
+              Saluru, Vizianagaram
+              <br>
+              15-Community Health Centre, Bhimavaram,
+              West Godavari District
+              <br>
+              16-Community Health Centre, Patapatnam
+              <br>
+              17-Community Health Center, Nandyal,
+              Banaganapalli, Kurnool
+              <br>
+              18- GSL Medical College & General Hospital,
+              Rajahnagram, East Godavari District
+              <br>
+              19- District Hospital, Madnapalle, Chittoor
+              District
+              <br>
+              20- District Hospital, APVVP, Pulivendula,
+              Kadapa District
+              <br>
+              21- District Hospital, Rajahmundry, East
+              Godavari District
+              <br>
+              22- District Hospital, Noonepalli, Nandyal,
+              Kurnool
+              <br>
+              23- DistrictHospital, Anakapalli, Vishakhapatnam
+              <br>
+              24- District Hospital, Hindupur, Anantpur
+              <br>
+              25- District Hospital, Proddatur
+              <br>
+              26- District Hospital, Machlipatnam
+              <br>
+              27- District Hospital, Atmakur
+              <br>
+              28- District Hospital, Markapur
+              <br>
+              District Hospital, Tekkali
+              <br>
+              29- Area Hospital, Rampachodavaram, East
+              Godavari District
+              <br>
+              30- Area Hospital, Palamaner, Chittoor
+              <br>
+              31- Area Hospital, Amalapuram, East
+              Godavari District
+              <br>
+              32- Area Hospital, Adoni, Kurnool
+              <br>
+              33- Area Hospital, Chirala
+              <br>
+              34- Area Hospital, Kandukuru
+              <br>
+              35- Area Hospital, Narsipatnam
+              <br>
+              36- Area Hospital, Parvathipuram
+              <br>
+              37- Area Hospital, Parvathipuram
+              <br>
+              38- Area Hospital, Tadepalligudem
+              <br>
+              39- Area Hospital, Kavali
+              <br>
+              40- Area Hospital, Tenali
+              <br>
+              41- Area Hospital, Narasaraopet, Guntur
+              <br>
+              42- Area Hospital, Macheria, Guntur
+              <br>
+              43- Area Hospital, Kadiri
+              <br>
+              44- Area Hospital, Gandhinagar, Nuzividu
+              <br>
+              45- ACSR Govt. Medical College, Nellore
+              <br>
+              46- Rural Development Trust, Bathalpalli
+              <br>
+              47- Govt. General Hospital, Guntur
+              <br>
+              48- Govt. General Hospital/ RIMS, Ongole
+              <br>
+              49- DST Lab Govt. Chest Hospital,
+              Vishakhapatnam
+              <br>
+              50- District Hospital, Vizianagram
+              <br>
+              51- District Hospital, Chittoor
+              <br>
+              52- District Hospital, Eluru
+              <br>
+              53- SHAR Hospital, Sriharikota, Nellore
+              <br>
+            </td>
 
-                      <td></td>
-                    </tr>
-                    <!-- <tr>
+            <td></td>
+          </tr>
+          <!-- <tr>
                       <th scope="row">3</th>
                       <td>Larry</td>
                       <td>the Bird</td>
                       <td>@twitter</td>
                     </tr> -->
-                  </tbody>
-                </table>
- <!-- Andman Table 2               -->
-                <table class="table table-bordered" id="Andaman" style="display:none;">
-                </table>      
-                
- <!-- Arunchal Table 3               -->                
-                <table class="table" id="Arunachal" style="display:none;">
-                  <thead>
-                    <tr>
-                      <th scope="col">Arunachal Pradesh</th>
-                      <th scope="col">Test Category(bhiar)</th>
-                      <th scope="col">Names of Government Institutes</th>
-                      <th scope="col">Names of Private Institutes</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>RT-PCR</td>
-                      <td>Tomo Riba Institute of Health & Medical Sciences, Naharlagun</td>
-                      <td>No</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>TrueNAT</td>
-                      <td>TrueNAT Intermediate Reference Laboratory, Directorate of Health Sciences, Naharlagun</td>
-                      <td>No</td>
-                    </tr>
-                  </tbody>
-                </table>   
- <!-- Assam Table 4               -->                
- <table class="table table-bordered" id="Assam" style="display:none;">
-      <thead>
-        <tr>
-          <th scope="col">Assam(13)</th>
-          <th scope="col">Test Category</th>
-          <th scope="col">Names of Government Institutes</th>
-          <th scope="col">Names of Private Institutes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>RT-PCR</td>
-          <td>1- Gauhati Medical College, Guwahati
+        </tbody>
+      </table>
+      <!-- Andman Table 2               -->
+      <table class="table table-bordered" id="Andaman" style="display:none;">
+      </table>
+
+      <!-- Arunchal Table 3               -->
+      <table class="table" id="Arunachal" style="display:none;">
+        <thead>
+          <tr>
+            <th scope="col">Arunachal Pradesh</th>
+            <th scope="col">Test Category(bhiar)</th>
+            <th scope="col">Names of Government Institutes</th>
+            <th scope="col">Names of Private Institutes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>RT-PCR</td>
+            <td>Tomo Riba Institute of Health & Medical Sciences, Naharlagun</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>TrueNAT</td>
+            <td>TrueNAT Intermediate Reference Laboratory, Directorate of Health Sciences, Naharlagun</td>
+            <td>No</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Assam Table 4               -->
+      <table class="table table-bordered" id="Assam" style="display:none;">
+        <thead>
+          <tr>
+            <th scope="col">Assam(13)</th>
+            <th scope="col">Test Category</th>
+            <th scope="col">Names of Government Institutes</th>
+            <th scope="col">Names of Private Institutes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>RT-PCR</td>
+            <td>1- Gauhati Medical College, Guwahati
               <br>
               2- ICMR-Regional Medical Research Center,Dibrugarh
               <br>
@@ -391,39 +599,39 @@
               <br>
               9. *Defence Research Laboratory, Tezpur
               Diphu Medical College, Karbi Anglong
-          </td>
-          <td>1. Ultracare Diagnostic Centre, Dept of Lab Services, Ashok Path, Survey, Beltola, Guwahati</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>TrueNat</td>
-          <td>No</td>
-          <td>1. Molecular Testing LAb, GNRC Lab services,
-            GNRC Hospitals, Dispur</td>
-        </tr>
-      </tbody>
-    </table>       
- <!-- Bhiar Table 5               -->                
- <table class="table table-bordered" id="Bihar" style="display:none;">
-      <thead>
-        <tr>
-          <th scope="col">Bihar(42)-Govt: 39 and Private: 3</th>
-          <th scope="col">Test Category</th>
-          <th scope="col">Names of Government Institutes</th>
-          <th scope="col">Names of Private Institutes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-          <td>Manipal Hospital, Tadepalli, Guntur</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>RT-PCR</td>
-          <td>1. ICMR-Rajendra Memorial Research Institute of Medical Sciences, Patna<br>
+            </td>
+            <td>1. Ultracare Diagnostic Centre, Dept of Lab Services, Ashok Path, Survey, Beltola, Guwahati</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>TrueNat</td>
+            <td>No</td>
+            <td>1. Molecular Testing LAb, GNRC Lab services,
+              GNRC Hospitals, Dispur</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Bhiar Table 5               -->
+      <table class="table table-bordered" id="Bihar" style="display:none;">
+        <thead>
+          <tr>
+            <th scope="col">Bihar(42)-Govt: 39 and Private: 3</th>
+            <th scope="col">Test Category</th>
+            <th scope="col">Names of Government Institutes</th>
+            <th scope="col">Names of Private Institutes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>RT-PCR</td>
+            <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+            <td>Manipal Hospital, Tadepalli, Guntur</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>RT-PCR</td>
+            <td>1. ICMR-Rajendra Memorial Research Institute of Medical Sciences, Patna<br>
               2. Indira Gandhi Institute Medical Sciences,
               Patna<br>
               3. Patna Medical College, Patna<br>
@@ -431,1107 +639,1169 @@
               5. SKMCH, Muzaffarpur<br>
               6. All India Institute of Medical Sciences,
               Patna<br>
-          </td>
-          <td>1. Narayan Medical College, Sasaram
-                <br>
-                2. #Saral Pathlab Pvt. Ltd, 55B, Sector O, Sachiwalaya Colony, Kankarbagh, Patna
-          </td>
-         </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>TrueNAT</td>
-          <td>
-            7. Anugrah Narayan Magadh Medical
-            College (ANMMC), Gaya
-            <br>
-            8. Vardhman Institute of Medical Sciences,Pawapuri, Nalanda
-            <br>
-            9. District Hospital, Siwan <br>
-            10. District Hospital, Rohtas <br>
-            11. JanNayak Karpoori Thakur Medical College and Hospital, Madhepura <br>
-            12. Govt. Medical College, Bettiah <br>
-            13. District Hospital, Purnia <br>
-            14. District Hospital, Katihar <br>
-            15. District Hospital, East Champaran <br>
-            16. District Hospital, Madhubani <br>
-            17. District Hospital, Buxar <br>
-            18. District Hospital, Khagaria <br>
-            19. District Hospital, Begusarai <br>
-            20. District Hospital, Banka, Bihar <br>
-            21. District Hospital, Gopalganj, Bihar <br>
-            22. District Hospital, Aurangabad, Bihar <br>
-            23. District Hospital, Jehanabad, Bihar <br>
-            24. District Hospital, Nawada, Bihar <br>
-            25. District Hospital, Arwal <br>
-            26. District Hospital, Saharsa, Bihar <br>
-            27. District Hospital, Supaul, Bihar <br>
-            28. District Hospital, Kaimur, Bihar <br>
-            29. District Hospital, Saran, Bihar <br>
-            30. District Hospital, Bhojpur, Bihar <br>
-            31. District Hospital, Kishanganj, Bihar <br>
-            32. District Hospital, Jamui, Bihar <br>
-            33. District Hospital, Lakhisarai, Bihar <br>
-            34. District Hospital, Munger <br>
-            35. District Hospital, Sheikhpura <br>
-            36. District Hospital, Vaishali <br>
-            37. District Hospital, Araria <br>
-            38. District Hospital, Samastipur<br>
-          </td>
-          <td>No</td>
-        </tr>
-      </tbody>
-    </table>                   
-  <!-- Chandigarh Table 6               -->                
-  <table class="table table-bordered" id="Chandigarh" style="display:none;">
-      <thead>
-        <tr>
-          <th scope="col">Chandigarh(3)</th>
-          <th scope="col">Test Category</th>
-          <th scope="col">Names of Government Institutes</th>
-          <th scope="col">Names of Private Institutes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>RT-PCR</td>
-          <td>1. Post Graduate Institute of Medical
-            Education & Research, Chandigarh<br>
-            2. Govt. Medical College, Chandigarh <br>
-            3. *Institute of Microbial Technology,
-            Chandigarh
-      </td>
-          <td>No</td>
-        </tr>
+            </td>
+            <td>1. Narayan Medical College, Sasaram
+              <br>
+              2. #Saral Pathlab Pvt. Ltd, 55B, Sector O, Sachiwalaya Colony, Kankarbagh, Patna
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>TrueNAT</td>
+            <td>
+              7. Anugrah Narayan Magadh Medical
+              College (ANMMC), Gaya
+              <br>
+              8. Vardhman Institute of Medical Sciences,Pawapuri, Nalanda
+              <br>
+              9. District Hospital, Siwan <br>
+              10. District Hospital, Rohtas <br>
+              11. JanNayak Karpoori Thakur Medical College and Hospital, Madhepura <br>
+              12. Govt. Medical College, Bettiah <br>
+              13. District Hospital, Purnia <br>
+              14. District Hospital, Katihar <br>
+              15. District Hospital, East Champaran <br>
+              16. District Hospital, Madhubani <br>
+              17. District Hospital, Buxar <br>
+              18. District Hospital, Khagaria <br>
+              19. District Hospital, Begusarai <br>
+              20. District Hospital, Banka, Bihar <br>
+              21. District Hospital, Gopalganj, Bihar <br>
+              22. District Hospital, Aurangabad, Bihar <br>
+              23. District Hospital, Jehanabad, Bihar <br>
+              24. District Hospital, Nawada, Bihar <br>
+              25. District Hospital, Arwal <br>
+              26. District Hospital, Saharsa, Bihar <br>
+              27. District Hospital, Supaul, Bihar <br>
+              28. District Hospital, Kaimur, Bihar <br>
+              29. District Hospital, Saran, Bihar <br>
+              30. District Hospital, Bhojpur, Bihar <br>
+              31. District Hospital, Kishanganj, Bihar <br>
+              32. District Hospital, Jamui, Bihar <br>
+              33. District Hospital, Lakhisarai, Bihar <br>
+              34. District Hospital, Munger <br>
+              35. District Hospital, Sheikhpura <br>
+              36. District Hospital, Vaishali <br>
+              37. District Hospital, Araria <br>
+              38. District Hospital, Samastipur<br>
+            </td>
+            <td>No</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Chandigarh Table 6               -->
+      <table class="table table-bordered" id="Chandigarh" style="display:none;">
+        <thead>
+          <tr>
+            <th scope="col">Chandigarh(3)</th>
+            <th scope="col">Test Category</th>
+            <th scope="col">Names of Government Institutes</th>
+            <th scope="col">Names of Private Institutes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>RT-PCR</td>
+            <td>1. Post Graduate Institute of Medical
+              Education & Research, Chandigarh<br>
+              2. Govt. Medical College, Chandigarh <br>
+              3. *Institute of Microbial Technology,
+              Chandigarh
+            </td>
+            <td>No</td>
+          </tr>
 
-      </tbody>
-    </table> 
-  <!-- Chattisgarh Table 7               -->                
-  <table class="table table-bordered" id="Chhattisgarh" style="display:none;">
-      <thead>
-        <tr>
-          <th scope="col">Chhattisgarh(5)</th>
-          <th scope="col">Test Category</th>
-          <th scope="col">Names of Government Institutes</th>
-          <th scope="col">Names of Private Institutes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>RT-PCR</td>
-          <td>1. All India Institute of Medical Sciences,
-            Raipur
-            <br>
-            2. Late Baliram Kashyap M Govt. Medical
-            College, Jagdalpur
-            3. JNM Medical College, Raipur <br>
-            4. Late Shri Lakhi Ram Agrawal Memorial
-            Govt. Medical College, Raigarh
-          </td>
-          <td>No</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>TrueNat</td>
-          <td>1. Intermediate Reference Laboratory, Lalpur, Raipur</td>
-          <td>No</td>
-        </tr>
+        </tbody>
+      </table>
+      <!-- Chattisgarh Table 7               -->
+      <table class="table table-bordered" id="Chhattisgarh" style="display:none;">
+        <thead>
+          <tr>
+            <th scope="col">Chhattisgarh(5)</th>
+            <th scope="col">Test Category</th>
+            <th scope="col">Names of Government Institutes</th>
+            <th scope="col">Names of Private Institutes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>RT-PCR</td>
+            <td>1. All India Institute of Medical Sciences,
+              Raipur
+              <br>
+              2. Late Baliram Kashyap M Govt. Medical
+              College, Jagdalpur
+              3. JNM Medical College, Raipur <br>
+              4. Late Shri Lakhi Ram Agrawal Memorial
+              Govt. Medical College, Raigarh
+            </td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>TrueNat</td>
+            <td>1. Intermediate Reference Laboratory, Lalpur, Raipur</td>
+            <td>No</td>
+          </tr>
 
-      </tbody>
-    </table>    
-  <!-- Dadar Table 8               -->                
-  <table class="table table-bordered" id="Dadar" style="display:none;">
-      <thead>
-        <tr>
-          <th scope="col">S. No.</th>
-          <th scope="col">Test Category(bhiar)</th>
-          <th scope="col">Names of Government Institutes</th>
-          <th scope="col">Names of Private Institutes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-          <td>Manipal Hospital, Tadepalli, Guntur</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Medical College, Tirupati</td>
-          <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>    
-  <!-- Daman Table 9               -->                
-  <table class="table table-bordered" id="Daman" style="display:none;">
-      <thead>
-        <tr>
-          <th scope="col">S. No.</th>
-          <th scope="col">Test Category(bhiar)</th>
-          <th scope="col">Names of Government Institutes</th>
-          <th scope="col">Names of Private Institutes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-          <td>Manipal Hospital, Tadepalli, Guntur</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Medical College, Tirupati</td>
-          <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>    
-   <!-- Delhi Table 10               -->                
-   <table class="table table-bordered" id="Delhi" style="display:none;">
-      <thead>
-        <tr>
-          <th scope="col">Delhi(42):Govt: 18 and Private: 24</th>
-          <th scope="col">Test Category</th>
-          <th scope="col">Names of Government Institutes</th>
-          <th scope="col">Names of Private Institutes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>RT-PCR</td>
-          <td>1. All India Institute Medical Sciences <br>
-            2. Lady Hardinge Medical College <br>
-            3. National Centre for Disease Control <br>
-            4. Ram Manohar Lohia Hospital <br>
-            5. Institute of Liver & Biliary Sciences<br>
-            6. Army Hospital Research & Referral<br>
-            7. Maulana Azad Medical College <br>
-            8. Vardhman Mahavir Medical College &
-            Safdarjung Hospital<br>
-            9. University College of Medical Sciences,
-            New Delhi<br>
-            10. Army Base Hospital, New Delhi <br>
-            11. *IGIB, CSIR, New Delhi <br>
-            12. Rajiv Gandhi Super Speciality Hospital,
-            Taharpur, Delhi <br>
-            13. Vallabhbhai Patel Chest Institute (VPCI),
-            Delhi <br>
-            14. *Defence Institute of Physiology & Allied Sciences (DIPAS), DRDO, Delhi <br>
-          </td>
-          <td>
-                1. Lal Path Labs, Block -E, Sector 18, Rohini,
-                Delhi <br>
-                2. #Dr Dangs Lab, C-2/1, Safadarjung
-                Development Area, New-Delhi <br>
-                3. Laboratory Services, Indraprastha Apollo
-                Hospitals, Sarita Vihar, New Delhi <br>
-                4. Max Lab, Max Super Spciality Hospital,
-                Saket, New-Delhi <br>
-                5. Sir Ganga Ram Hospital Clinical Lab
-                Services, Sir Ganga Ram Hospital, Delhi <br>
-                6. Oncquest Labs Ltd, 3-Factory Road, New-
-                Delhi <br>
-                7. Prognosis Laboratories, 515-16, Sector 19,
-                Dwarka <br>
-                8. City X-Ray & Scan Clinic Pvt Ltd, 4B/18,
-                Tilak Nagar, New-Delhi <br>
-                9. Lifeline Laboratory, H-11, Green Park
-                Extension, New-Delhi <br>
-                10. Dept of Lab Services, Dr. B.L. Kapur
-                Memorial Hospital, 5, Pusa Road, New-
-                Delhi <br>
-                11. Dept of Laboratory Services, Action Cancer
-                Hospital, A-4, Paschim Vihar (East), New-
-                Delhi <br>
-                12. Star Imaging & Path Lab Pvt Ltd, 4B/4, Tilak
-                Nagar, New Delhi<br>
-                13. Genestrings Diagnostic Centre Pvt Ltd, 3,
-                MMTC, Geetanjali Enclave, New Delhi<br>
-                14. Sterling Accuris Diagnostics, A divison of
-                Sterling Accuris Wellness Pvt Ltd, C-65, Block
-                C, Phase I, Okhla, New Delhi<br>
-                15. CRL Diagnostics Pvt Ltd, Plot No 10, Avtar
-                Enclave, Opposite Metro Pillar 227, Paschim
-                Vihar, Rohtak Road, New Delhi<br>
-                16. Dept of Lab Medicine, HCMCT, Manipal
-                Hospital, Main Road, Sector 6, Dwarka, New
-                Delhi<br>
-                17. Gen-X Diagnostics, 2/6, Sarvapriya Vihar,
-                New Delhi <br>
-                18. Noble Diagnostic Centre, WZ-409C, Janak
-                Park, Hari Nagar, Opposite DDU Hospital,
-                New Delhi <br>
-                19. Mahajan Imaging Pvt Ltd, E-19, Defence
-                Colony, New-Delhi <br>
-                20. Dept of Lab Sciences, Rajiv Gandhi Cancer
-                Institute & Research Centre, Sector 5, Rohini,
-                New-Delhi<br>
-                21. Metropolis Healthcare Ltd. E21, Block-B1,
-                Mohan Cooperative Industrial Estate, South
-                East Delhi<br>
-                22. Gagan Pathology & Imaging Pvt Ltd F-
-                26/21-22, Near Ayodhya Chowk,Sector 7,
-                Rohini, Delhi
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>TrueNat</td>
-          <td>1. ESIC Hospital, Basaidarapur</td>
-          <td>1. Aakash Path Lab, Aakash Healthcare & Super
-            speciality Hospital, Road No 201, Sector 3,
-            Dwarka, New Delhi</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>CB NAAT</td>
-          <td>1. State TB Training and Demonstration
-            Centre, Jawaharlal Nehru Marg, Delhi
-            Gate<br>
-            2. Department of Microbiology, National
-            Institute of TB and Respiratory Diseases
-            (NITRD), New Delhi <br>
-            3. Northern Railway Central Hospital, New
-            Delhi</td>
-          <td>1. Dr P Bhasin Path Labs (P) Ltd, S 13 Greater
-            Kailash Part 1, New Delhi</td>
-        </tr>
-      </tbody>
-    </table>    
-   <!-- Lakshadweep Table 11               -->                
-   <table class="table" id="Lakshadweep" style="display:none;">
-      <thead>
-        <tr>
-          <th scope="col">Lakshadweep</th>
-          <th scope="col">Test Category</th>
-          <th scope="col">Names of Government Institutes</th>
-          <th scope="col">Names of Private Institutes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-          <td>Manipal Hospital, Tadepalli, Guntur</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Medical College, Tirupati</td>
-          <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>  
-   <!-- Panducherry Table 12               -->                
-   <table class="table" id='Puducherry' style="display: none;">
-      <thead>
-        <tr>
-          <th scope="col">Panducherry</th>
-          <th scope="col">Test Category(bhiar)</th>
-          <th scope="col">Names of Government Institutes</th>
-          <th scope="col">Names of Private Institutes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-          <td>Manipal Hospital, Tadepalli, Guntur</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Medical College, Tirupati</td>
-          <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>  
-            
-   <!-- Goa Table 13               -->                
-   <table class="table" id="Goa" style="display:none;">
-      <thead>
-        <tr>
-          <th scope="col">Goa</th>
-          <th scope="col">Test Category(bhiar)</th>
-          <th scope="col">Names of Government Institutes</th>
-          <th scope="col">Names of Private Institutes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-          <td>Manipal Hospital, Tadepalli, Guntur</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Medical College, Tirupati</td>
-          <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
-   
-   <!-- Gujrat Table 14               -->                
-   <table class="table" id="Gujrat" style="display:none;">
-      <thead>
-        <tr>
-          <th scope="col">Gujrat</th>
-          <th scope="col">Test Category(bhiar)</th>
-          <th scope="col">Names of Government Institutes</th>
-          <th scope="col">Names of Private Institutes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-          <td>Manipal Hospital, Tadepalli, Guntur</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Medical College, Tirupati</td>
-          <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+      <!-- Dadar Table 8               -->
+      <table class="table table-bordered" id="Dadar" style="display:none;">
+        <thead>
+          <tr>
+            <th scope="col">S. No.</th>
+            <th scope="col">Test Category(bhiar)</th>
+            <th scope="col">Names of Government Institutes</th>
+            <th scope="col">Names of Private Institutes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>RT-PCR</td>
+            <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+            <td>Manipal Hospital, Tadepalli, Guntur</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>RT-PCR</td>
+            <td>Sri Venkateswara Medical College, Tirupati</td>
+            <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+              Tirupathi</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Daman Table 9               -->
+      <table class="table table-bordered" id="Daman" style="display:none;">
+        <thead>
+          <tr>
+            <th scope="col">S. No.</th>
+            <th scope="col">Test Category(bhiar)</th>
+            <th scope="col">Names of Government Institutes</th>
+            <th scope="col">Names of Private Institutes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>RT-PCR</td>
+            <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+            <td>Manipal Hospital, Tadepalli, Guntur</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>RT-PCR</td>
+            <td>Sri Venkateswara Medical College, Tirupati</td>
+            <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+              Tirupathi</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Delhi Table 10               -->
+      <table class="table table-bordered" id="Delhi" style="display:none;">
+        <thead>
+          <tr>
+            <th scope="col">Delhi(42):Govt: 18 and Private: 24</th>
+            <th scope="col">Test Category</th>
+            <th scope="col">Names of Government Institutes</th>
+            <th scope="col">Names of Private Institutes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>RT-PCR</td>
+            <td>1. All India Institute Medical Sciences <br>
+              2. Lady Hardinge Medical College <br>
+              3. National Centre for Disease Control <br>
+              4. Ram Manohar Lohia Hospital <br>
+              5. Institute of Liver & Biliary Sciences<br>
+              6. Army Hospital Research & Referral<br>
+              7. Maulana Azad Medical College <br>
+              8. Vardhman Mahavir Medical College &
+              Safdarjung Hospital<br>
+              9. University College of Medical Sciences,
+              New Delhi<br>
+              10. Army Base Hospital, New Delhi <br>
+              11. *IGIB, CSIR, New Delhi <br>
+              12. Rajiv Gandhi Super Speciality Hospital,
+              Taharpur, Delhi <br>
+              13. Vallabhbhai Patel Chest Institute (VPCI),
+              Delhi <br>
+              14. *Defence Institute of Physiology & Allied Sciences (DIPAS), DRDO, Delhi <br>
+            </td>
+            <td>
+              1. Lal Path Labs, Block -E, Sector 18, Rohini,
+              Delhi <br>
+              2. #Dr Dangs Lab, C-2/1, Safadarjung
+              Development Area, New-Delhi <br>
+              3. Laboratory Services, Indraprastha Apollo
+              Hospitals, Sarita Vihar, New Delhi <br>
+              4. Max Lab, Max Super Spciality Hospital,
+              Saket, New-Delhi <br>
+              5. Sir Ganga Ram Hospital Clinical Lab
+              Services, Sir Ganga Ram Hospital, Delhi <br>
+              6. Oncquest Labs Ltd, 3-Factory Road, New-
+              Delhi <br>
+              7. Prognosis Laboratories, 515-16, Sector 19,
+              Dwarka <br>
+              8. City X-Ray & Scan Clinic Pvt Ltd, 4B/18,
+              Tilak Nagar, New-Delhi <br>
+              9. Lifeline Laboratory, H-11, Green Park
+              Extension, New-Delhi <br>
+              10. Dept of Lab Services, Dr. B.L. Kapur
+              Memorial Hospital, 5, Pusa Road, New-
+              Delhi <br>
+              11. Dept of Laboratory Services, Action Cancer
+              Hospital, A-4, Paschim Vihar (East), New-
+              Delhi <br>
+              12. Star Imaging & Path Lab Pvt Ltd, 4B/4, Tilak
+              Nagar, New Delhi<br>
+              13. Genestrings Diagnostic Centre Pvt Ltd, 3,
+              MMTC, Geetanjali Enclave, New Delhi<br>
+              14. Sterling Accuris Diagnostics, A divison of
+              Sterling Accuris Wellness Pvt Ltd, C-65, Block
+              C, Phase I, Okhla, New Delhi<br>
+              15. CRL Diagnostics Pvt Ltd, Plot No 10, Avtar
+              Enclave, Opposite Metro Pillar 227, Paschim
+              Vihar, Rohtak Road, New Delhi<br>
+              16. Dept of Lab Medicine, HCMCT, Manipal
+              Hospital, Main Road, Sector 6, Dwarka, New
+              Delhi<br>
+              17. Gen-X Diagnostics, 2/6, Sarvapriya Vihar,
+              New Delhi <br>
+              18. Noble Diagnostic Centre, WZ-409C, Janak
+              Park, Hari Nagar, Opposite DDU Hospital,
+              New Delhi <br>
+              19. Mahajan Imaging Pvt Ltd, E-19, Defence
+              Colony, New-Delhi <br>
+              20. Dept of Lab Sciences, Rajiv Gandhi Cancer
+              Institute & Research Centre, Sector 5, Rohini,
+              New-Delhi<br>
+              21. Metropolis Healthcare Ltd. E21, Block-B1,
+              Mohan Cooperative Industrial Estate, South
+              East Delhi<br>
+              22. Gagan Pathology & Imaging Pvt Ltd F-
+              26/21-22, Near Ayodhya Chowk,Sector 7,
+              Rohini, Delhi
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>TrueNat</td>
+            <td>1. ESIC Hospital, Basaidarapur</td>
+            <td>1. Aakash Path Lab, Aakash Healthcare & Super
+              speciality Hospital, Road No 201, Sector 3,
+              Dwarka, New Delhi</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>CB NAAT</td>
+            <td>1. State TB Training and Demonstration
+              Centre, Jawaharlal Nehru Marg, Delhi
+              Gate<br>
+              2. Department of Microbiology, National
+              Institute of TB and Respiratory Diseases
+              (NITRD), New Delhi <br>
+              3. Northern Railway Central Hospital, New
+              Delhi</td>
+            <td>1. Dr P Bhasin Path Labs (P) Ltd, S 13 Greater
+              Kailash Part 1, New Delhi</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Lakshadweep Table 11               -->
+      <table class="table" id="Lakshadweep" style="display:none;">
+        <thead>
+          <tr>
+            <th scope="col">Lakshadweep</th>
+            <th scope="col">Test Category</th>
+            <th scope="col">Names of Government Institutes</th>
+            <th scope="col">Names of Private Institutes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>RT-PCR</td>
+            <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+            <td>Manipal Hospital, Tadepalli, Guntur</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>RT-PCR</td>
+            <td>Sri Venkateswara Medical College, Tirupati</td>
+            <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+              Tirupathi</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Panducherry Table 12               -->
+      <table class="table" id='Puducherry' style="display: none;">
+        <thead>
+          <tr>
+            <th scope="col">Panducherry</th>
+            <th scope="col">Test Category(bhiar)</th>
+            <th scope="col">Names of Government Institutes</th>
+            <th scope="col">Names of Private Institutes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>RT-PCR</td>
+            <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+            <td>Manipal Hospital, Tadepalli, Guntur</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>RT-PCR</td>
+            <td>Sri Venkateswara Medical College, Tirupati</td>
+            <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+              Tirupathi</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
 
-   <!-- Haryana Table 15               -->                
-   <table class="table" id="Haryana" style="display:none;">
-      <thead>
-        <tr>
-          <th scope="col">Haryana</th>
-          <th scope="col">Test Category(bhiar)</th>
-          <th scope="col">Names of Government Institutes</th>
-          <th scope="col">Names of Private Institutes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-          <td>Manipal Hospital, Tadepalli, Guntur</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Medical College, Tirupati</td>
-          <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
+      <!-- Goa Table 13               -->
+      <table class="table" id="Goa" style="display:none;">
+        <thead>
+          <tr>
+            <th scope="col">Goa</th>
+            <th scope="col">Test Category(bhiar)</th>
+            <th scope="col">Names of Government Institutes</th>
+            <th scope="col">Names of Private Institutes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>RT-PCR</td>
+            <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+            <td>Manipal Hospital, Tadepalli, Guntur</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>RT-PCR</td>
+            <td>Sri Venkateswara Medical College, Tirupati</td>
+            <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+              Tirupathi</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
 
-      <!-- Himachal Table 16               -->                
-   <table class="table" id="Himachal" style="display:none;">
-      <thead>
-        <tr>
-          <th scope="col">Himachal</th>
-          <th scope="col">Test Category</th>
-          <th scope="col">Names of Government Institutes</th>
-          <th scope="col">Names of Private Institutes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-          <td>Manipal Hospital, Tadepalli, Guntur</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Medical College, Tirupati</td>
-          <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
-   <!-- J&K Table 17               -->                
-   <table class="table" id="JK" style="display:none;">
-      <thead>
-        <tr>
-          <th scope="col">J&K</th>
-          <th scope="col">Test Category</th>
-          <th scope="col">Names of Government Institutes</th>
-          <th scope="col">Names of Private Institutes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-          <td>Manipal Hospital, Tadepalli, Guntur</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Medical College, Tirupati</td>
-          <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
-   <!-- jharkhand Table 18               -->                
-   <table class="table" id="Jharkhand" style="display:none;">
-      <thead>
-        <tr>
-          <th scope="col">Jharkhand</th>
-          <th scope="col">Test Category</th>
-          <th scope="col">Names of Government Institutes</th>
-          <th scope="col">Names of Private Institutes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-          <td>Manipal Hospital, Tadepalli, Guntur</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Medical College, Tirupati</td>
-          <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
+      <!-- Gujrat Table 14               -->
+      <table class="table" id="Gujarat" style="display:none;">
+        <thead>
+          <tr>
+            <th scope="col">Gujarat (42): Govt: 24 and Private: 18</th>
+            <th scope="col">Test Category</th>
+            <th scope="col">Names of Government Institutes</th>
+            <th scope="col">Names of Private Institutes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>RT-PCR</td>
+            <td>1. BJ Medical College, Ahmedabad<br>
+              2. MP Shah Govt Medical College, Jamnagar<br>
+              3. Govt. Medical College, Surat <br>
+              4. Govt. Medical College, Bhavnagar<br>
+              5. Govt. Medical College, Vadodara <br>
+              6. Govt. Medical College, Rajkot <br>
+              7. NHL Medical College, Ahmedabad <br>
+              8. GMERS Medical College, Ahmedabad <br>
+              9. GMERS Medical College, Gandhinagar<br>
+              10. GMERS Medical College, Valsad <br>
+              11. ICMR-National Institute of Occupational
+              Health, Ahmedabad <br>
+              12. Gujarat Cancer & Research Institute,
+              Ahmedabad<br>
+              13. Surat Municipal Institute of Medical
+              Education & Research (SMIMER), Surat<br>
+              14. GMERS Medical College and Hospital,
+              Dharpur-Patan, Gujarat<br>
+              15. Gujarat Adani Institute of Medical
+              Sciences, Bhuj<br>
+              16. Gujarat Biotechnology Research Center,
+              Gandhinagar<br>
+              17. Gujarat Forensic Sciences University,
+              Gandhinagar<br>
+              18. GMERS Medical College, Gotri, Vadodara <br>
+              19. GMERS Medical College, Himmatnagar <br>
+              20. Dr. H.L. Trivedi Institute of Transplantation Services, Ahmedabad <br>
+              21. GMERS Medical College, Junagadh <br>
+            </td>
+            <td>1. Unipath Specialty laboratory limited, 102,
+              Sanoma Plaza, Opposite Parimal Garden,
+              Besides JMC House, Ellisbridge, Ahmedabad <br>
+              2. Supratech Micropath Laboratory & Research
+              Institute Pvt Ltd, Kedar, Ahmedabad<br>
+              3. SN GeneLab Pvt Ltd, President Plaza –A, Near
+              Mahavir Hospital, Nanpura, Surat <br>
+              4. Pangenomics International Pvt Ltd, Ellis
+              Bridge, Ahmedabad <br>
+              5. #Dept of Lab Medicine, Zydus Hospitals &
+              Healthcare Research Pvt Ltd, Zydus Hospital
+              Road, Hebatpur, Off S.G. Highway, Thaltej,
+              Ahmedabad<br>
+              6. #Toprani Advanced Lab Systems, Suflam, 10,
+              Haribhakti Colony, Race Course, Vadodra<br>
+              7. Dept of Lab Medicine, Apollo Hospitals
+              International Ltd, 1, Bhat, GIDC Estate,
+              Ahmedabad<br>
+              8. Divine lab, B 201/202, Mangalkirti Apartment,
+              Fatehgunj, Vadodra<br>
+              9. Green Cross Genetics Lab Pvt Ltd, 104, Sears
+              Towers, Ahmedabad<br>
+              10. #Sunflower Laboratory, Helmet Circle, Rudra
+              Arcade, Drive In Road, Manav Mandir,
+              MemNagar, Ahmedabad<br>
+              11. Parul Institute of Medical Sciences & Research
+              (PIMSR), Vadodara<br>
+              12. Dhiraj Hospital, Smt. B.K. Shah Medical
+              Institute & Research Centre, Vadodara<br>
+              13. Gujarat Pathology Lab & Diagnostic Centre, 101/102, Span Trade Centre, Paldi, Ahmedabad<br>
+              14. Scientific Diagnostic Centre Pvt.Ltd, 3,Venunand Raw House, Gulbai Tekra Road, Ellisebridge,
+              Ahmedabad<br>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>TrueNat</td>
+            <td>No</td>
+            <td>1. Salvus Bioresearch Solutions, 2nd Floor, Earth
+              Retail, Science City Circle, S.P. Ring Road,
+              Ahmedabad</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>CB NAAT</td>
+            <td>1. GCS Medical College and Hospital, Ahmedabad<br>
+              2. AMC MET Medical College and Hospital, Ahmedabad<br>
+            </td>
+            <td>1. Dept of Lab Medicine, Bhailal Amin Gen Hospital, Alembic Road, Gorwa, Vadodra<br>
+              2. Microcare Lab & TRC, 105, Manthan Point,Unapani Road, Surat<br>
+              3. Speciality Microtech Laboratory, 121 Akshar
+              Arcade, Navrangpura, Ahmedabad<br>
+              4. Sterling Accuris Diagnostics, Sterling Hospital,
+              Phase 2, 1st Floor, Race Course Circle (West),
+              Vadodra<br>
+              <table class="table" id="Haryana" style="display:none;">
+                <thead>
+                  <tr>
+                    <th scope="col">Haryana</th>
+                    <th scope="col">Test Category(bhiar)</th>
+                    <th scope="col">Names of Government Institutes</th>
+                    <th scope="col">Names of Private Institutes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+                    <td>Manipal Hospital, Tadepalli, Guntur</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Medical College, Tirupati</td>
+                    <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+                      Tirupathi</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
 
-     <!-- Karnataka Table 19               -->                
-     <table class="table" id="Karnataka" style="display:none;">
-      <thead>
-        <tr>
-          <th scope="col">Karnataka</th>
-          <th scope="col">Test Category</th>
-          <th scope="col">Names of Government Institutes</th>
-          <th scope="col">Names of Private Institutes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-          <td>Manipal Hospital, Tadepalli, Guntur</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Medical College, Tirupati</td>
-          <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>  
+              <!-- Himachal Table 16               -->
+              <table class="table" id="Himachal" style="display:none;">
+                <thead>
+                  <tr>
+                    <th scope="col">Himachal</th>
+                    <th scope="col">Test Category</th>
+                    <th scope="col">Names of Government Institutes</th>
+                    <th scope="col">Names of Private Institutes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+                    <td>Manipal Hospital, Tadepalli, Guntur</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Medical College, Tirupati</td>
+                    <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+                      Tirupathi</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- J&K Table 17               -->
+              <table class="table" id="JK" style="display:none;">
+                <thead>
+                  <tr>
+                    <th scope="col">J&K</th>
+                    <th scope="col">Test Category</th>
+                    <th scope="col">Names of Government Institutes</th>
+                    <th scope="col">Names of Private Institutes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+                    <td>Manipal Hospital, Tadepalli, Guntur</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Medical College, Tirupati</td>
+                    <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+                      Tirupathi</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- jharkhand Table 18               -->
+              <table class="table" id="Jharkhand" style="display:none;">
+                <thead>
+                  <tr>
+                    <th scope="col">Jharkhand</th>
+                    <th scope="col">Test Category</th>
+                    <th scope="col">Names of Government Institutes</th>
+                    <th scope="col">Names of Private Institutes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+                    <td>Manipal Hospital, Tadepalli, Guntur</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Medical College, Tirupati</td>
+                    <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+                      Tirupathi</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
 
-       <!-- Kerla Table 20               -->                
-   <table class="table" id="Kerla" style="display:none;">
-      <thead>
-        <tr>
-          <th scope="col">Kerla</th>
-          <th scope="col">Test Category</th>
-          <th scope="col">Names of Government Institutes</th>
-          <th scope="col">Names of Private Institutes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-          <td>Manipal Hospital, Tadepalli, Guntur</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Medical College, Tirupati</td>
-          <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
+              <!-- Karnataka Table 19               -->
+              <table class="table" id="Karnataka" style="display:none;">
+                <thead>
+                  <tr>
+                    <th scope="col">Karnataka</th>
+                    <th scope="col">Test Category</th>
+                    <th scope="col">Names of Government Institutes</th>
+                    <th scope="col">Names of Private Institutes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+                    <td>Manipal Hospital, Tadepalli, Guntur</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Medical College, Tirupati</td>
+                    <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+                      Tirupathi</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
 
-        <!-- MP Table 21               -->                
-        <table class="table" id="MP" style="display:none;">
-            <thead>
-              <tr>
-                <th scope="col">MP</th>
-                <th scope="col">Test Category</th>
-                <th scope="col">Names of Government Institutes</th>
-                <th scope="col">Names of Private Institutes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-                <td>Manipal Hospital, Tadepalli, Guntur</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Medical College, Tirupati</td>
-                <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>   
-        <!-- Maharastra Table 22               -->                
-        <table class="table" id="Maharastra" style="display:none;">
-            <thead>
-              <tr>
-                <th scope="col">Maharastra</th>
-                <th scope="col">Test Category</th>
-                <th scope="col">Names of Government Institutes</th>
-                <th scope="col">Names of Private Institutes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-                <td>Manipal Hospital, Tadepalli, Guntur</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Medical College, Tirupati</td>
-                <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>   
+              <!-- Kerla Table 20               -->
+              <table class="table" id="Kerla" style="display:none;">
+                <thead>
+                  <tr>
+                    <th scope="col">Kerla</th>
+                    <th scope="col">Test Category</th>
+                    <th scope="col">Names of Government Institutes</th>
+                    <th scope="col">Names of Private Institutes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+                    <td>Manipal Hospital, Tadepalli, Guntur</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Medical College, Tirupati</td>
+                    <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+                      Tirupathi</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
 
-<!-- Manipur Table 23               -->                
-        <table class="table" id="Manipur" style="display:none;">
-            <thead>
-              <tr>
-                <th scope="col">Manipur</th>
-                <th scope="col">Test Category</th>
-                <th scope="col">Names of Government Institutes</th>
-                <th scope="col">Names of Private Institutes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-                <td>Manipal Hospital, Tadepalli, Guntur</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Medical College, Tirupati</td>
-                <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>   
+              <!-- MP Table 21               -->
+              <table class="table" id="MP" style="display:none;">
+                <thead>
+                  <tr>
+                    <th scope="col">MP</th>
+                    <th scope="col">Test Category</th>
+                    <th scope="col">Names of Government Institutes</th>
+                    <th scope="col">Names of Private Institutes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+                    <td>Manipal Hospital, Tadepalli, Guntur</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Medical College, Tirupati</td>
+                    <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+                      Tirupathi</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- Maharastra Table 22               -->
+              <table class="table" id="Maharastra" style="display:none;">
+                <thead>
+                  <tr>
+                    <th scope="col">Maharastra</th>
+                    <th scope="col">Test Category</th>
+                    <th scope="col">Names of Government Institutes</th>
+                    <th scope="col">Names of Private Institutes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+                    <td>Manipal Hospital, Tadepalli, Guntur</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Medical College, Tirupati</td>
+                    <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+                      Tirupathi</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
 
-        <!-- Meghalaya Table 24               -->                
-        <table class="table" id="Meghalaya" style="display:none;">
-            <thead>
-              <tr>
-                <th scope="col">Meghalaya</th>
-                <th scope="col">Test Category</th>
-                <th scope="col">Names of Government Institutes</th>
-                <th scope="col">Names of Private Institutes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-                <td>Manipal Hospital, Tadepalli, Guntur</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Medical College, Tirupati</td>
-                <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>   
-        <!-- Mijoram Table 25               -->                
-        <table class="table" id="Mijoram" style="display:none;">
-            <thead>
-              <tr>
-                <th scope="col">Mijoram</th>
-                <th scope="col">Test Category</th>
-                <th scope="col">Names of Government Institutes</th>
-                <th scope="col">Names of Private Institutes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-                <td>Manipal Hospital, Tadepalli, Guntur</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Medical College, Tirupati</td>
-                <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>   
-        <!-- Nagaland Table 26               -->                
-        <table class="table" id="Nagaland" style="display:none;">
-            <thead>
-              <tr>
-                <th scope="col">Nagaland</th>
-                <th scope="col">Test Category</th>
-                <th scope="col">Names of Government Institutes</th>
-                <th scope="col">Names of Private Institutes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-                <td>Manipal Hospital, Tadepalli, Guntur</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Medical College, Tirupati</td>
-                <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>    
-        <!-- Odisha Table 27               -->                
-        <table class="table" id="Odisha" style="display:none;">
-            <thead>
-              <tr>
-                <th scope="col">Odisha</th>
-                <th scope="col">Test Category</th>
-                <th scope="col">Names of Government Institutes</th>
-                <th scope="col">Names of Private Institutes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-                <td>Manipal Hospital, Tadepalli, Guntur</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Medical College, Tirupati</td>
-                <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>                      
-        <!-- Punjab Table 28               -->                
-        <table class="table" id="Punjab" style="display:none;">
-            <thead>
-              <tr>
-                <th scope="col">Punjab</th>
-                <th scope="col">Test Category</th>
-                <th scope="col">Names of Government Institutes</th>
-                <th scope="col">Names of Private Institutes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-                <td>Manipal Hospital, Tadepalli, Guntur</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Medical College, Tirupati</td>
-                <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>  
-         <!-- Rajsthan Table 29               -->                
-         <table class="table" id="Rajsthan" style="display:none;">
-            <thead>
-              <tr>
-                <th scope="col">Rajsthan</th>
-                <th scope="col">Test Category</th>
-                <th scope="col">Names of Government Institutes</th>
-                <th scope="col">Names of Private Institutes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-                <td>Manipal Hospital, Tadepalli, Guntur</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Medical College, Tirupati</td>
-                <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>            
-         <!-- Sikkim Table 30               -->                
-         <table class="table" id="Sikkim" style="display:none;">
-            <thead>
-              <tr>
-                <th scope="col">Sikkim</th>
-                <th scope="col">Test Category</th>
-                <th scope="col">Names of Government Institutes</th>
-                <th scope="col">Names of Private Institutes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-                <td>Manipal Hospital, Tadepalli, Guntur</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Medical College, Tirupati</td>
-                <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table> 
-         <!-- Tamilnadu Table 31               -->                
-         <table class="table" id="Tamilnadu" style="display:none;">
-            <thead>
-              <tr>
-                <th scope="col">Tamilnadu</th>
-                <th scope="col">Test Category</th>
-                <th scope="col">Names of Government Institutes</th>
-                <th scope="col">Names of Private Institutes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-                <td>Manipal Hospital, Tadepalli, Guntur</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Medical College, Tirupati</td>
-                <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>  
-         <!-- Telangana Table 32               -->                
-         <table class="table" id="Telangana" style="display:none;">
-            <thead>
-              <tr>
-                <th scope="col">Telangana</th>
-                <th scope="col">Test Category</th>
-                <th scope="col">Names of Government Institutes</th>
-                <th scope="col">Names of Private Institutes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-                <td>Manipal Hospital, Tadepalli, Guntur</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Medical College, Tirupati</td>
-                <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>               
-<!-- Tripura Table 33               -->                
-         <table class="table" id="Tripura" style="display:none;">
-            <thead>
-              <tr>
-                <th scope="col">Tripura</th>
-                <th scope="col">Test Category</th>
-                <th scope="col">Names of Government Institutes</th>
-                <th scope="col">Names of Private Institutes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-                <td>Manipal Hospital, Tadepalli, Guntur</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>RT-PCR</td>
-                <td>Sri Venkateswara Medical College, Tirupati</td>
-                <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>                              
-<!-- UP Table 34               -->                
-<table class="table" id="UP" style="display:none;">
-      <thead>
-        <tr>
-          <th scope="col">UP</th>
-          <th scope="col">Test Category</th>
-          <th scope="col">Names of Government Institutes</th>
-          <th scope="col">Names of Private Institutes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-          <td>Manipal Hospital, Tadepalli, Guntur</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Medical College, Tirupati</td>
-          <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>      
-<!-- Uttrkhand Table 35               -->                
-<table class="table" id="Uttrkhand" style="display:none;">
-      <thead>
-        <tr>
-          <th scope="col">Uttrkhand</th>
-          <th scope="col">Test Category</th>
-          <th scope="col">Names of Government Institutes</th>
-          <th scope="col">Names of Private Institutes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-          <td>Manipal Hospital, Tadepalli, Guntur</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Medical College, Tirupati</td>
-          <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>    
-<!-- WB Table 36               -->                
-<table class="table" id="WB" style="display:none;">
-      <thead>
-        <tr>
-          <th scope="col">WB</th>
-          <th scope="col">Test Category</th>
-          <th scope="col">Names of Government Institutes</th>
-          <th scope="col">Names of Private Institutes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
-          <td>Manipal Hospital, Tadepalli, Guntur</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>RT-PCR</td>
-          <td>Sri Venkateswara Medical College, Tirupati</td>
-          <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam, Tirupathi</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>                                                                                    
-</div>                             
-</div>
+              <!-- Manipur Table 23               -->
+              <table class="table" id="Manipur" style="display:none;">
+                <thead>
+                  <tr>
+                    <th scope="col">Manipur</th>
+                    <th scope="col">Test Category</th>
+                    <th scope="col">Names of Government Institutes</th>
+                    <th scope="col">Names of Private Institutes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+                    <td>Manipal Hospital, Tadepalli, Guntur</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Medical College, Tirupati</td>
+                    <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+                      Tirupathi</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- Meghalaya Table 24               -->
+              <table class="table" id="Meghalaya" style="display:none;">
+                <thead>
+                  <tr>
+                    <th scope="col">Meghalaya</th>
+                    <th scope="col">Test Category</th>
+                    <th scope="col">Names of Government Institutes</th>
+                    <th scope="col">Names of Private Institutes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+                    <td>Manipal Hospital, Tadepalli, Guntur</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Medical College, Tirupati</td>
+                    <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+                      Tirupathi</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- Mijoram Table 25               -->
+              <table class="table" id="Mijoram" style="display:none;">
+                <thead>
+                  <tr>
+                    <th scope="col">Mijoram</th>
+                    <th scope="col">Test Category</th>
+                    <th scope="col">Names of Government Institutes</th>
+                    <th scope="col">Names of Private Institutes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+                    <td>Manipal Hospital, Tadepalli, Guntur</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Medical College, Tirupati</td>
+                    <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+                      Tirupathi</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- Nagaland Table 26               -->
+              <table class="table" id="Nagaland" style="display:none;">
+                <thead>
+                  <tr>
+                    <th scope="col">Nagaland</th>
+                    <th scope="col">Test Category</th>
+                    <th scope="col">Names of Government Institutes</th>
+                    <th scope="col">Names of Private Institutes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+                    <td>Manipal Hospital, Tadepalli, Guntur</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Medical College, Tirupati</td>
+                    <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+                      Tirupathi</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- Odisha Table 27               -->
+              <table class="table" id="Odisha" style="display:none;">
+                <thead>
+                  <tr>
+                    <th scope="col">Odisha</th>
+                    <th scope="col">Test Category</th>
+                    <th scope="col">Names of Government Institutes</th>
+                    <th scope="col">Names of Private Institutes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+                    <td>Manipal Hospital, Tadepalli, Guntur</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Medical College, Tirupati</td>
+                    <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+                      Tirupathi</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- Punjab Table 28               -->
+              <table class="table" id="Punjab" style="display:none;">
+                <thead>
+                  <tr>
+                    <th scope="col">Punjab</th>
+                    <th scope="col">Test Category</th>
+                    <th scope="col">Names of Government Institutes</th>
+                    <th scope="col">Names of Private Institutes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+                    <td>Manipal Hospital, Tadepalli, Guntur</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Medical College, Tirupati</td>
+                    <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+                      Tirupathi</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- Rajsthan Table 29               -->
+              <table class="table" id="Rajsthan" style="display:none;">
+                <thead>
+                  <tr>
+                    <th scope="col">Rajsthan</th>
+                    <th scope="col">Test Category</th>
+                    <th scope="col">Names of Government Institutes</th>
+                    <th scope="col">Names of Private Institutes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+                    <td>Manipal Hospital, Tadepalli, Guntur</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Medical College, Tirupati</td>
+                    <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+                      Tirupathi</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- Sikkim Table 30               -->
+              <table class="table" id="Sikkim" style="display:none;">
+                <thead>
+                  <tr>
+                    <th scope="col">Sikkim</th>
+                    <th scope="col">Test Category</th>
+                    <th scope="col">Names of Government Institutes</th>
+                    <th scope="col">Names of Private Institutes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+                    <td>Manipal Hospital, Tadepalli, Guntur</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Medical College, Tirupati</td>
+                    <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+                      Tirupathi</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- Tamilnadu Table 31               -->
+              <table class="table" id="Tamilnadu" style="display:none;">
+                <thead>
+                  <tr>
+                    <th scope="col">Tamilnadu</th>
+                    <th scope="col">Test Category</th>
+                    <th scope="col">Names of Government Institutes</th>
+                    <th scope="col">Names of Private Institutes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+                    <td>Manipal Hospital, Tadepalli, Guntur</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Medical College, Tirupati</td>
+                    <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+                      Tirupathi</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- Telangana Table 32               -->
+              <table class="table" id="Telangana" style="display:none;">
+                <thead>
+                  <tr>
+                    <th scope="col">Telangana</th>
+                    <th scope="col">Test Category</th>
+                    <th scope="col">Names of Government Institutes</th>
+                    <th scope="col">Names of Private Institutes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+                    <td>Manipal Hospital, Tadepalli, Guntur</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Medical College, Tirupati</td>
+                    <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+                      Tirupathi</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- Tripura Table 33               -->
+              <table class="table" id="Tripura" style="display:none;">
+                <thead>
+                  <tr>
+                    <th scope="col">Tripura</th>
+                    <th scope="col">Test Category</th>
+                    <th scope="col">Names of Government Institutes</th>
+                    <th scope="col">Names of Private Institutes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+                    <td>Manipal Hospital, Tadepalli, Guntur</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Medical College, Tirupati</td>
+                    <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+                      Tirupathi</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- Uttrkhand Table 35               -->
+              <table class="table" id="Uttrkhand" style="display:none;">
+                <thead>
+                  <tr>
+                    <th scope="col">Uttrkhand</th>
+                    <th scope="col">Test Category</th>
+                    <th scope="col">Names of Government Institutes</th>
+                    <th scope="col">Names of Private Institutes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+                    <td>Manipal Hospital, Tadepalli, Guntur</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Medical College, Tirupati</td>
+                    <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+                      Tirupathi</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- WB Table 36               -->
+              <table class="table" id="WB" style="display:none;">
+                <thead>
+                  <tr>
+                    <th scope="col">WB</th>
+                    <th scope="col">Test Category</th>
+                    <th scope="col">Names of Government Institutes</th>
+                    <th scope="col">Names of Private Institutes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Institute of Medical Sciences, Tirupati</td>
+                    <td>Manipal Hospital, Tadepalli, Guntur</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>RT-PCR</td>
+                    <td>Sri Venkateswara Medical College, Tirupati</td>
+                    <td>PathGene Health Care Pvt Ltd#2nd Floor, Srinivasapuram, Tiruchanoor Road, Opp LV kayanamandapam,
+                      Tirupathi</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+    </div>
+  </div>
 
 </body>
+
 </html>
